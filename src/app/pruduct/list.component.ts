@@ -1,21 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Hero} from '../hero';
-import {HeroService} from '../hero.service';
+import {Product} from './product';
+import {ProductService} from './product.service';
 
 @Component({
-  selector: 'my-list',
+  selector: 'pd-list',
   templateUrl: './list.component.html',
-  styleUrls:[ './list.component.css' ]
+  styleUrls:[ './list.component.scss' ]
 })
 
 export class ListComponent {
-  heroes:Hero[]=[];
+  products:Product[]=[];
 
-  constructor(private heroService:HeroService){}
+  constructor(private productService:ProductService){}
 
   ngOnInit():void{
-    this.heroService.getHeroes()
-      .then(heroes=>this.heroes=heroes);
+    this.productService.getProducts()
+      .then(products=>this.products=products);
   }
 }

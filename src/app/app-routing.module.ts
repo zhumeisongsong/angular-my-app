@@ -2,8 +2,8 @@ import {NgModule}             from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {ListComponent}        from './pruduct/list.component';
-import {HeroesComponent}      from './heroes.component';
-import {HeroDetailComponent}  from './pruduct/hero-detail.component';
+import {HeroesComponent}      from './pruduct/heroes.component';
+import {ProductDetailComponent}  from './pruduct/product-detail.component';
 
 import {CartComponent}        from './order/cart.component';
 
@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'detail/:id',
-    component: HeroDetailComponent
+    component: ProductDetailComponent
   },
   {
     path: 'cart',

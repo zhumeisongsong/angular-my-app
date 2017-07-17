@@ -5,13 +5,13 @@ import {FormsModule}            from '@angular/forms';
 //引用组件
 import {AppComponent}         from './app.component';
 import {ListComponent}        from './pruduct/list.component';
-import {HeroDetailComponent}  from './pruduct/hero-detail.component';
-import {HeroesComponent}      from './heroes.component';
+import {ProductDetailComponent}  from './pruduct/product-detail.component';
+import {HeroesComponent}      from './pruduct/heroes.component';
 
 import {CartComponent}        from './order/cart.component';
 import {UserCenterComponent}  from './user/user-center.component';
 
-import {HeroService}          from './hero.service';
+import {ProductService}          from './pruduct/product.service';
 
 import {AppRoutingModule}     from './app-routing.module';
 
@@ -25,12 +25,12 @@ import {AppRoutingModule}     from './app-routing.module';
     AppComponent,
     ListComponent,
     HeroesComponent,
-    HeroDetailComponent,
+    ProductDetailComponent,
     CartComponent,
     UserCenterComponent
   ],
   providers: [
-    HeroService
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
