@@ -13,7 +13,7 @@ import 'rxjs/add/operator/switchMap';
   //@Component装饰器为组件提供Angular元数据
   selector:'pd-detail',
   templateUrl:'./product-detail.component.html',
-  styleUrls:['./product-detail.component.css']
+  styleUrls:['./product-detail.component.scss']
 })
 
 export class ProductDetailComponent implements OnInit {

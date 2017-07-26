@@ -4,9 +4,8 @@ import {FormsModule}            from '@angular/forms';
 
 //引用组件
 import {AppComponent}         from './app.component';
-import {ListComponent}        from './pruduct/list.component';
+import {ProductListComponent}        from './pruduct/product-list.component';
 import {ProductDetailComponent}  from './pruduct/product-detail.component';
-import {HeroesComponent}      from './pruduct/heroes.component';
 
 import {CartComponent}        from './order/cart.component';
 import {UserCenterComponent}  from './user/user-center.component';
@@ -23,8 +22,7 @@ import {AppRoutingModule}     from './app-routing.module';
   ],
   declarations: [
     AppComponent,
-    ListComponent,
-    HeroesComponent,
+    ProductListComponent,
     ProductDetailComponent,
     CartComponent,
     UserCenterComponent

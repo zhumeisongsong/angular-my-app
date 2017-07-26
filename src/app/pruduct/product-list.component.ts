@@ -5,11 +5,11 @@ import {ProductService} from './product.service';
 
 @Component({
   selector: 'pd-list',
-  templateUrl: './list.component.html',
-  styleUrls:[ './list.component.scss' ]
+  templateUrl: './product-list.component.html',
+  styleUrls:[ './product-list.component.scss' ]
 })
 
-export class ListComponent {
+export class ProductListComponent {
   products:Product[]=[];
 
   constructor(private productService:ProductService){}

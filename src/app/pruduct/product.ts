@@ -3,4 +3,5 @@ export class Product {
   title: string;
   info:string;
   price:number;
+  cover:string;
 }
