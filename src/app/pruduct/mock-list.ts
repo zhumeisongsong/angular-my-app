@@ -3,30 +3,16 @@ import {Product} from './product';
 export const PRODUCTS = [
   {
     id: 11,
-    title: '这是一首简单的小情歌',
-    info: 'this si info',
+    name: '这是一首简单的小情歌',
+    intro: 'this si info',
     price: 33,
-    cover:'./assets/image/list-cover.jpg'
+    coverUrl:'./assets/image/list-cover.jpg'
   },
   {
     id: 12,
-    title: '唱出人们心头的曲折',
-    info: 'this si info',
+    name: '唱出人们心头的曲折',
+    intro: 'this si info',
     price: 33,
-    cover:'./assets/image/list-cover.jpg'
-  },
-  {
-    id: 13,
-    title: '我想我很快乐',
-    info: 'this si info',
-    price: 33,
-    cover:'./assets/image/list-cover.jpg'
-  },
-  {
-    id: 14,
-    title: '当有你的温热',
-    info: 'this si info',
-    price: 33,
-    cover:'./assets/image/list-cover.jpg'
+    coverUrl:'./assets/image/list-cover.jpg'
   },
 ];

@@ -1,7 +1,7 @@
 export class Product {
   id: number;
-  title: string;
-  info:string;
+  name: string;
+  intro:string;
   price:number;
-  cover:string;
+  coverUrl:string;
 }
