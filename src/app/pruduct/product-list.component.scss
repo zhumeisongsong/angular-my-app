@@ -1,5 +1,6 @@
 @import "../../assets/stylesheet/variable";
 @import "../../assets/stylesheet/mixin";
+
 .container{
   padding-left: map_get($global-space,b);
   padding-right: map_get($global-space,b);

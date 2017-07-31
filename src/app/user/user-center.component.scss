@@ -1,31 +1,34 @@
+@import "../../assets/stylesheet/variable";
+@import "../../assets/stylesheet/mixin";
+
 .user {
   width: 100%;
   height: 100%;
 }
 
-.flex-box {
-  @include flex-box(row, center, center);
-}
-
 .user-header {
   position: relative;
   width: 100%;
-  height: 55vh;
+  height: 30vh;
   background: url("../../assets/image/user-bg.jpg") center no-repeat;
   background-size: cover;
   .wrapper {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: map-get($global-color, h);
+    &.flex-box {
+      @include flex-box(column, center, center);
+    }
     .user-photo {
       width: 44px;
       height: 44px;
-      -moz-border-radius: 50%;
+      border-radius: 50%;
       overflow: hidden;
+      background-color: #fff;
     }
-    .user-name{
-      margin-top: 10vh;
+    .user-name {
+      margin-top: 10px;
       color: #fff;
     }
   }
