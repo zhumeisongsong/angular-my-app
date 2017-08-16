@@ -6,13 +6,27 @@ export const PRODUCTS = [
     name: '这是一首简单的小情歌',
     intro: 'this si info',
     price: 33,
-    coverUrl:'./assets/image/list-cover.jpg'
+    coverUrl: './assets/image/list-cover.jpg'
   },
   {
     id: 12,
-    name: '唱出人们心头的曲折',
+    name: '唱出人们心头的曲折2',
     intro: 'this si info',
     price: 33,
-    coverUrl:'./assets/image/list-cover.jpg'
+    coverUrl: './assets/image/list-cover.jpg'
+  },
+  {
+    id: 12,
+    name: '唱出人们心头的曲折3',
+    intro: 'this si info',
+    price: 33,
+    coverUrl: './assets/image/list-cover.jpg'
+  },
+  {
+    id: 12,
+    name: '唱出人们心头的曲折4',
+    intro: 'this si info',
+    price: 33,
+    coverUrl: './assets/image/list-cover.jpg'
   },
 ];

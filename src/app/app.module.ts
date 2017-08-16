@@ -3,16 +3,18 @@ import {BrowserModule}          from '@angular/platform-browser';
 import {FormsModule}            from '@angular/forms';
 
 //引用组件
-import {AppComponent}         from './app.component';
-import {ProductListComponent}        from './pruduct/product-list.component';
-import {ProductDetailComponent}  from './pruduct/product-detail.component';
+import {AppComponent} from './app.component';
+import {ProductListComponent} from './pruduct/product-list.component';
+import {ProductDetailComponent} from './pruduct/product-detail.component';
 
-import {CartComponent}        from './order/cart.component';
-import {UserCenterComponent}  from './user/user-center.component';
+import {CartComponent} from './order/cart.component';
 
-import {ProductService}          from './pruduct/product.service';
+import {UserCenterComponent} from './user/user-center.component';
+import {SignInComponent} from './user/sign-in.component';
 
-import {AppRoutingModule}     from './app-routing.module';
+import {ProductService} from './pruduct/product.service';
+
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   imports: [
@@ -22,10 +24,14 @@ import {AppRoutingModule}     from './app-routing.module';
   ],
   declarations: [
     AppComponent,
+
     ProductListComponent,
     ProductDetailComponent,
+
     CartComponent,
-    UserCenterComponent
+
+    UserCenterComponent,
+    SignInComponent
   ],
   providers: [
     ProductService

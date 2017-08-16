@@ -1,0 +1,11 @@
+<div class="container">
+  <form #loginForm="ngForm">
+    <div class="form-group">
+      <input  type="tel" class="form-control" id="phone"
+             required
+             [(ngModel)]="model.phone" phone="phone">
+      TODO:remove this:{{model.name}}
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
