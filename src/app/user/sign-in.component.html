@@ -1,11 +1,19 @@
 <div class="container">
-  <form #loginForm="ngForm">
-    <div class="form-group">
-      <input  type="tel" class="form-control" id="phone"
+  <img src="./assets/image/user-login.jpg" alt="user-login">
+
+  <form #loginForm="ngForm" class="form">
+    <div class="input-group input-phone">
+      <input type="tel" class="input" id="phone" placeholder="请输入您的手机号码"
              required
              [(ngModel)]="model.phone" phone="phone">
-      TODO:remove this:{{model.name}}
+      <button class="btn btn-code">获取验证码</button>
+      <!--TODO:remove this:{{model.name}}-->
     </div>
-    <button type="submit" class="btn btn-success">Submit</button>
+
+    <div class="input-group input-code">
+      <input class="input" pattern="[0-9]*" maxlength="6" placeholder="请输入短信验证码">
+    </div>
+
+    <button type="submit" class="btn">登录</button>
   </form>
 </div>

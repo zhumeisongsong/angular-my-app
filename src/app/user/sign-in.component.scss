@@ -1,0 +1,47 @@
+@import "../../assets/stylesheet/variable";
+
+.form {
+  width: 100%;
+  padding: map-get($global-space,b)*2 map-get($global-space, b);
+}
+
+.input-group{
+  padding-bottom: map-get($global-space,b)*2;
+  &::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:32px;
+    height: 40px;
+    z-index: map-get($global-z-index,b);
+    background-repeat: no-repeat;
+    background-position:0 0 ;
+  }
+}
+
+.input {
+  height: 40px;
+  padding: 10px 10px 10px 32px;
+  background: map-get($global-color, l);
+}
+
+.input-phone {
+  padding-right: 96px;
+  &::before{
+    background-image: url("../../assets/image/icon/phone.svg");
+  }
+  .btn-code {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    width: 88px;
+    height: 32px;
+  }
+}
+
+.input-code{
+  &::before{
+    background-image: url("../../assets/image/icon/code.svg");
+  }
+}

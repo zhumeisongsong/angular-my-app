@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "assets/vendor/stylesheet/swiper-3.4.2.min.css",
+//        "assets/vendor/stylesheet/swiper-3.4.2.min.css",
         "assets/stylesheet/app.scss"
       ],
       "scripts": [],
