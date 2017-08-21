@@ -2,8 +2,8 @@
 @import "../../assets/stylesheet/mixin";
 
 .container {
-  padding-left: map_get($global-space, b);
-  padding-right: map_get($global-space, b);
+  padding-left: map-get($global-space, b);
+  padding-right: map-get($global-space, b);
   margin-bottom: 50px;
 }
 
@@ -12,16 +12,16 @@
 }
 
 a {
-  margin-bottom: map_get($global-space, a);
+  margin-bottom: map-get($global-space, a);
   display: block;
 }
 
 .text-con {
-  padding-top: map_get($global-space, a);
-  padding-bottom: map_get($global-space, a);
+  padding-top: map-get($global-space, a);
+  padding-bottom: map-get($global-space, a);
   .text-sub {
     padding-top: 5px;
-    padding-bottom: map_get($global-space, a);
+    padding-bottom: map-get($global-space, a);
   }
 }
 

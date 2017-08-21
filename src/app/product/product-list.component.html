@@ -1,11 +1,11 @@
 <div class="container">
-  <a *ngFor="let product of products" [routerLink]="['/product/detail', product.id]" class="ui-border-b">
+  <a *ngFor="let product of products" [routerLink]="['/product/detail', product.pdId]" class="ui-border-b">
     <img src="{{product.coverUrl}}" alt="cover">
 
     <section class="flex-box text-con">
       <div class="col-xs-9">
         <h2>{{product.name}}</h2>
-        <p class="text-sub">{{product.intro}}</p>
+        <p class="text-sub">{{product.listIntro}}</p>
         <h2>{{product.price}}元</h2>
       </div>
       <div class="col-xs-3 btn-con">

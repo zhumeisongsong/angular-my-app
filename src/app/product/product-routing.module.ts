@@ -8,10 +8,18 @@ import {ProductDetailComponent} from "./product-detail.component";
 @NgModule({
   imports: [
     RouterModule.forChild([
-      {path: 'product/list', component: ProductListComponent},
-      {path: 'product/detail/:id', component: ProductDetailComponent}
-    ])],
+      {
+        path: 'product/list',
+        component: ProductListComponent
+      },
+      {
+        path: 'product/detail/:id',
+        component: ProductDetailComponent
+      }
+    ])
+  ],
   exports: [RouterModule]
 })
 
-export class ProductRoutingModule {}
+export class ProductRoutingModule {
+}

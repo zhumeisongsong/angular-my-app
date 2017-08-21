@@ -1,4 +1,6 @@
-.nav-bar{
+@import "../assets/stylesheet/variable";
+
+.nav-bar {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -6,23 +8,23 @@
   height: 49px;
   padding: 0 12px;
   background-color: #fff;
-  z-index: 2;
-  .nav-item{
-    width:33.3%;
+  z-index: map-get($global-z-index,a)+10;
+  .nav-item {
+    width: 33.3%;
     float: left;
-    &:nth-child(1){
+    &:nth-child(1) {
       text-align: left;
     }
-    &:nth-child(2){
+    &:nth-child(2) {
       text-align: center;
     }
-    &:nth-child(3){
+    &:nth-child(3) {
       text-align: right;
     }
   }
-  .nav-icon{
+  .nav-icon {
     height: 20px;
   }
-  .nav-title{
+  .nav-title {
   }
 }

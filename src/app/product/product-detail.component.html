@@ -1,12 +1,46 @@
-<div *ngIf="product">
-  <h2>{{product.name}} details!</h2>
-  <div>
-    <label>id:</label>
-    {{product.id}}
+<div *ngIf="product" class="container">
+  <div class="swiper-con">
+    <img src="{{product.coverUrl}}" alt="cover">
   </div>
-  <div>
-    <label>name:</label>
-    <input [(ngModel)]="product.name" placeholder="name">
+
+  <div class="text-con">
+    <p class="text-title">{{product.name}}</p>
+    <p class="text-sub">{{product.detailIntro}}</p>
+    <p class="text-price"><span class="price">¥{{product.price}}</span><span class="original-price">原价：¥{{product.originalPrice}}</span>
+    </p>
   </div>
+
+  <div class="text-deliver ui-border-t">
+    <span class="deliver-price">运费：免运费</span>
+    <span class="user-purchase">已经有{{product.userPurchase}}人购买</span>
+  </div>
+
+  <div class="detail-con">
+    <!--<div class="store-con arrow-right">-->
+    <!--<span>{{product.storeName}}</span>-->
+    <!--<span>进入店铺</span>-->
+    <!--</div>-->
+    <div class="rich-text">{{product.richText}}</div>
+  </div>
+
+  <nav class="nav-buy ui-border-t">
+    <div class="icon-store" routerLink="/product/list">
+      <img src="./assets/image/icon/home.svg" alt="home">
+      <p>首页</p>
+    </div>
+    <div class="cart-status" routerLink="/order/cart">
+      <div class="image-con">
+        <img src="./assets/image/icon/chart.svg" alt="chart">
+      </div>
+      <p>购物车</p>
+    </div>
+    <div class="cart-add">加入购物车</div>
+    <div class="purchase-now">立即购买</div>
+  </nav>
 </div>
-<button (click)="goBack()">Back</button>
+
+<!--<div>-->
+<!--<label>name:</label>-->
+<!--<input [(ngModel)]="product.name" placeholder="name">-->
+<!--</div>-->
+<!--<button (click)="goBack()">Back</button>-->

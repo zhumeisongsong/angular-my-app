@@ -4,6 +4,7 @@ import {Product} from './product';
 import {PRODUCTS} from './mock-list';
 
 @Injectable()//必须写括号
+
 export class ProductService {
 
   getProducts(): Promise<Product[]> {
@@ -12,6 +13,6 @@ export class ProductService {
 
   getProduct(id: number): Promise<Product> {
     return this.getProducts()
-      .then(products => products.find(product => product.id === id));
+      .then(products => products.find(product => product.pdId === id));
   }
 }

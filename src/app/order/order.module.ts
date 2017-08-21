@@ -22,7 +22,9 @@ import {OrderRoutingModule} from './order-routing.module';
     OrderListComponent,
     OrderDetailComponent
   ],
-  exports: [],//特性模块可以对其他模块暴露或隐藏自己的实现
+  exports: [
+    CartComponent,
+  ],//特性模块可以对其他模块暴露或隐藏自己的实现
   providers: []
 })
 
