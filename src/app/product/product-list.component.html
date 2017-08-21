@@ -1,5 +1,5 @@
 <div class="container">
-  <a *ngFor="let product of products" [routerLink]="['/detail', product.id]" class="ui-border-b">
+  <a *ngFor="let product of products" [routerLink]="['/product/detail', product.id]" class="ui-border-b">
     <img src="{{product.coverUrl}}" alt="cover">
 
     <section class="flex-box text-con">
