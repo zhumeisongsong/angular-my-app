@@ -16,26 +16,27 @@
   </div>
 
   <div class="detail-con">
-    <!--<div class="store-con arrow-right">-->
-    <!--<span>{{product.storeName}}</span>-->
-    <!--<span>进入店铺</span>-->
-    <!--</div>-->
+    <header class="ui-border-t"></header>
     <div class="rich-text">{{product.richText}}</div>
   </div>
+  <!--<div class="store-con arrow-right">-->
+  <!--<span>{{product.storeName}}</span>-->
+  <!--<span>进入店铺</span>-->
+  <!--</div>-->
 
   <nav class="nav-buy ui-border-t">
-    <div class="icon-store" routerLink="/product/list">
+    <div class="icon-con ui-border-r" routerLink="/product/list">
       <img src="./assets/image/icon/home.svg" alt="home">
       <p>首页</p>
     </div>
-    <div class="cart-status" routerLink="/order/cart">
+    <div class="icon-con" routerLink="/order/cart">
       <div class="image-con">
-        <img src="./assets/image/icon/chart.svg" alt="chart">
+        <img src="./assets/image/icon/cart.svg" alt="cart">
       </div>
       <p>购物车</p>
     </div>
-    <div class="cart-add">加入购物车</div>
-    <div class="purchase-now">立即购买</div>
+    <div class="btn-con btn-cart">加入购物车</div>
+    <div class="btn-con btn-pauchase">立即购买</div>
   </nav>
 </div>
 
