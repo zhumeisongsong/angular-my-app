@@ -1,26 +1,6 @@
 @import "../../assets/stylesheet/variable";
 @import "../../assets/stylesheet/mixin";
 
-.container {
-  width: 100%;
-  height: 100%;
-  background-color: map-get($global-color, k);
-}
-
-.tab-list {
-  width: 100%;
-  padding: 0 map-get($global-space, b);
-  border-bottom: 1px solid map-get($global-color, d);
-  @include flex-box(row, space-between, center);
-  font-size: map-get($global-font-size,normal)+2px;
-  background-color: #fff;
-  color: map-get($global-color, b);
-  li {
-    height: 48px;
-    line-height: 48px;
-  }
-}
-
 .order-list {
   .order-item {
     margin-bottom: 10px;
@@ -35,7 +15,7 @@
   }
 }
 
-.pdt-list {
+.pd-list {
   width: 100%;
   background-color: #fff;
   li:nth-last-child(2) {
@@ -43,7 +23,7 @@
   }
 }
 
-.pdt-item {
+.pd-item {
   padding: map-get($global-space,b);
   margin-bottom: 5px;
   background-color: map-get($global-color, j);

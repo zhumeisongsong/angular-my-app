@@ -4,7 +4,7 @@
   </div>
 
   <div class="text-con">
-    <p class="text-title">{{product.name}}</p>
+    <h2 class="text-title line-ellipsis">{{product.name}}</h2>
     <p class="text-sub">{{product.detailIntro}}</p>
     <p class="text-price"><span class="price">¥{{product.price}}</span><span class="original-price">原价：¥{{product.originalPrice}}</span>
     </p>
@@ -25,19 +25,21 @@
   <!--</div>-->
 
   <nav class="nav-buy ui-border-t">
-    <div class="icon-con ui-border-r" routerLink="/product/list">
+    <a class="icon-con ui-border-r" routerLink="/product/list">
       <img src="./assets/image/icon/home.svg" alt="home">
       <p>首页</p>
-    </div>
-    <div class="icon-con" routerLink="/order/cart">
+    </a>
+    <a class="icon-con" routerLink="/cart">
       <div class="image-con">
         <img src="./assets/image/icon/cart.svg" alt="cart">
       </div>
       <p>购物车</p>
-    </div>
-    <div class="btn-con btn-cart">加入购物车</div>
-    <div class="btn-con btn-pauchase">立即购买</div>
+    </a>
+
+    <a class="btn-con btn-cart">加入购物车</a>
+    <a class="btn-con btn-purchase">立即购买</a>
   </nav>
+
 </div>
 
 <!--<div>-->

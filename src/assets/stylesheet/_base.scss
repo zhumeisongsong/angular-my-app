@@ -10,7 +10,7 @@ body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
   font-size: map-get($global-font-size, nomal);
-  color: map-get($global-color,b);
+  color: map-get($global-color, b);
 }
 
 a {
@@ -56,7 +56,6 @@ h2 {
   width: 100%;
   padding: 5px;
   border: none;
-  //color: map-get($global-color,b);
   &::placeholder {
     color: map-get($global-color, g);
   }
@@ -71,11 +70,28 @@ h2 {
   }
 }
 
-.line-ellipsis{
+.line-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp:2;
-};
+  -webkit-line-clamp: 2;
+}
+
+.text-con {
+  width: 100%;
+  padding: map-get($global-space,b)*2 map-get($global-space, b);
+  background-color: #fff;
+  .text-title {
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .text-sub {
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .text-price {
+    margin-bottom: 6px;
+  }
+}
 

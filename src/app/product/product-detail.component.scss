@@ -3,34 +3,23 @@
 
 .container {
   position: relative;
+  margin-bottom: 48px;
 }
 
 .swiper-con {
-
 }
 
 .text-con {
-  width: 100%;
-  padding: map-get($global-space,b)*2 map-get($global-space, b);
-  background-color: #fff;
-  .text-title {
-    padding-bottom: 6px;
+  .price {
+    padding-right: 6px;
+    font-size: map-get($global-font-size, a);
+    color: map-get($global-color, f);
   }
-  .text-sub {
-    padding-bottom: 6px;
-    line-height: 1.4;
-  }
-  .text-price {
-    .price {
-      font-size: map-get($global-font-size, a);
-      padding-right: 24px;
-    }
-    .original-price {
-      font-size: map-get($global-font-size, small);
-      font-weight: 300;
-      color: map-get($global-color, i);
-      text-decoration: line-through;
-    }
+  .original-price {
+    font-size: map-get($global-font-size, small);
+    font-weight: 300;
+    color: map-get($global-color, i);
+    text-decoration: line-through;
   }
 }
 
@@ -40,12 +29,6 @@
   padding: map-get($global-space, b);
   color: map-get($global-color, g);
   font-size: map-get($global-font-size, small);
-  .deliver-price {
-
-  }
-  .user-purchase {
-
-  }
 }
 
 .detail-con {
@@ -65,35 +48,35 @@
   height: 48px;
   background-color: #fff;
   float: left;
-  .icon-con{
+  .icon-con {
     width: 15%;
     height: 100%;
     text-align: center;
     float: left;
-    @include flex-box(column,center,center);
-    p{
+    @include flex-box(column, center, center);
+    p {
       padding-top: 2px;
       font-size: 12px;
-      color: map-get($global-color,g);
+      color: map-get($global-color, b);
     }
-    img{
+    img {
       width: 22px;
       margin: 0 auto;
     }
   }
-  .btn-con{
+  .btn-con {
     width: 35%;
     height: 100%;
     text-align: center;
     font-size: 14px;
-    float: left;
     color: #fff;
-    @include flex-box(row,center,center);
+    @include flex-box(row, center, center);
+    float: left;
   }
-  .btn-cart{
-    background-color: map-get($global-color,a);
+  .btn-cart {
+    background-color: map-get($global-color, a);
   }
-  .btn-pauchase{
-    background-color: map-get($global-color,c);
+  .btn-purchase {
+    background-color: map-get($global-color, c);
   }
 }

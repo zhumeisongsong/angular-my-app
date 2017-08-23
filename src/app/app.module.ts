@@ -1,24 +1,31 @@
-import {NgModule}               from '@angular/core';
-import {BrowserModule}          from '@angular/platform-browser';
-import {AppRoutingModule}       from './app-routing.module';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-//App root
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//app root
 import {AppComponent} from './app.component';
 
-//imports modules
+//feature modules 不导入的module被异步获取并加载
 import {ProductModule} from './product/product.module';
+import {CartModule} from './cart/cart.module';
 import {OrderModule} from './order/order.module';
 import {UserModule} from './user/user.module';
 
+//routing module
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
 
     ProductModule,
+    CartModule,
     OrderModule,
-    UserModule
+    UserModule,
+
+    AppRoutingModule,//放在最后，因为存在默认路由和通配符路由
   ],
   declarations: [
     AppComponent,
@@ -28,5 +35,4 @@ import {UserModule} from './user/user.module';
 })
 
 export class AppModule {
-
 }

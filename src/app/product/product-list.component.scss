@@ -2,30 +2,14 @@
 @import "../../assets/stylesheet/mixin";
 
 .container {
-  padding-left: map-get($global-space, b);
-  padding-right: map-get($global-space, b);
-  margin-bottom: 50px;
-}
-
-.flex-box {
-  @include flex-box(row, space-between, flex-end);
-}
-
-a {
-  margin-bottom: map-get($global-space, a);
-  display: block;
+  margin-bottom: 48px;
 }
 
 .text-con {
-  padding-top: map-get($global-space, a);
-  padding-bottom: map-get($global-space, a);
-  .text-sub {
-    padding-top: 5px;
-    padding-bottom: map-get($global-space, a);
-  }
+  @include flex-box(row, space-between, flex-end);
 }
 
-.btn-con{
+.btn-con {
   text-align: right;
 }
 

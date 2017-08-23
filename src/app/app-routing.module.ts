@@ -1,21 +1,26 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: '/product/list',
     pathMatch: 'full'
   },
+  // {
+  //   path: '**',
+  //   component: PageNotFoundComponent
+  // }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(
+      routes,
+      {enableTracing: true}
+    )//仅用于应用的根模块
   ],
-  exports: [
-    RouterModule
-  ]
+  exports: [RouterModule]
 })
 
 export class AppRoutingModule {

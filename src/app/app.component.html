@@ -1,12 +1,16 @@
-<nav class="nav-bar" *ngIf="true">
-  <a routerLink="/product/list" routerLinkActive="active" class="nav-item">
+<nav class="nav-bar ui-border-t">
+  <a routerLink="/product" routerLinkActive="active" class="nav-item">
+    <span class="nav-icon"></span>
     <span class="nav-title">首页</span>
   </a>
   <a routerLink="/cart" routerLinkActive="active" class="nav-item">
+    <span class="nav-icon"></span>
     <span class="nav-title">购物车</span>
   </a>
   <a routerLink="/user" routerLinkActive="active" class="nav-item">
+    <span class="nav-icon"></span>
     <span class="nav-title">我的</span>
   </a>
 </nav>
+
 <router-outlet></router-outlet>

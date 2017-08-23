@@ -1,17 +1,19 @@
 <div class="container">
-  <a *ngFor="let product of products" [routerLink]="['/product/detail', product.pdId]" class="ui-border-b">
+  <section *ngFor="let product of products" [routerLink]="['/product', product.pdId]">
     <img src="{{product.coverUrl}}" alt="cover">
 
-    <section class="flex-box text-con">
+    <div class="text-con">
       <div class="col-xs-9">
-        <h2>{{product.name}}</h2>
+        <h2 class="text-title line-ellipsis">{{product.name}}</h2>
         <p class="text-sub">{{product.listIntro}}</p>
-        <h2>{{product.price}}元</h2>
+        <p class="text-price">{{product.price}}元</p>
       </div>
       <div class="col-xs-3 btn-con">
         <button type="button" class="btn">立即购买</button>
       </div>
+    </div>
 
-    </section>
-  </a>
+  </section>
 </div>
+
+

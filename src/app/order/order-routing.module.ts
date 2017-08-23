@@ -1,20 +1,45 @@
-//特性模块定义自己的路由
 import {NgModule} from "@angular/core";
-import {RouterModule} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 
-import {OrderListComponent} from "./order-list.component";
+import {OrderComponent} from "./order.component";
+
+import {OrderNavComponent} from "./order-nav.component";
+import {OrderListComponent} from './order-list.component';
 import {OrderDetailComponent} from "./order-detail.component";
+
 import {OrderConfirmComponent} from "./order-confirm.component";
-import {CartComponent} from "./cart.component";
+
+const orderRoutes: Routes = [
+  {
+    path: 'order',
+    component: OrderComponent,
+    children: [
+      {
+        path: '',
+        component: OrderNavComponent,
+        children: [
+          {
+            path: ':status',
+            component: OrderListComponent
+          },
+        ]
+      },
+      {
+        path: ':id',
+        component: OrderDetailComponent
+      },
+      {
+        path: 'confirm',
+        component: OrderConfirmComponent
+      },
+    ]
+  },
+];
 
 @NgModule({
   imports: [
-    RouterModule.forChild([
-      {path: 'cart', component: CartComponent},
-      {path: 'order/list', component: OrderListComponent},
-      {path: 'order/detail/:id', component: OrderDetailComponent},
-      {path: 'order/confirm', component: OrderConfirmComponent}
-    ])],
+    RouterModule.forChild(orderRoutes)
+  ],
   exports: [RouterModule]
 })
 

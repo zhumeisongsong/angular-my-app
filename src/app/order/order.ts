@@ -1,12 +1,8 @@
 export class Order {
-  id: number;
-  shopId:number;
-  shopName:string;
-
-  userId:number;
-
+  odId: number;
+  uId:number;
   status:string;
   creatDate:string;
-  price:number;
-
+  totalPrice:number;
+  pdList:string;
 }
