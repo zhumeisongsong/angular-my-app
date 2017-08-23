@@ -17,7 +17,7 @@ export const routes: Routes = [
   imports: [
     RouterModule.forRoot(
       routes,
-      {enableTracing: true}
+      // {enableTracing: true}
     )//仅用于应用的根模块
   ],
   exports: [RouterModule]
