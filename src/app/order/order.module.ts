@@ -5,11 +5,11 @@ import {FormsModule} from '@angular/forms';
 
 import {OrderComponent} from './order.component';
 import {OrderConfirmComponent} from './order-confirm.component';
-
 import {OrderNavComponent} from './order-nav.component';
 import {OrderListComponent} from './order-list.component';
 import {OrderDetailComponent} from './order-detail.component';
 
+import {OrderService} from'./order.service';
 import {OrderRoutingModule} from './order-routing.module';
 
 @NgModule({
@@ -27,7 +27,9 @@ import {OrderRoutingModule} from './order-routing.module';
     OrderDetailComponent
   ],
   exports: [],//特性模块可以对其他模块暴露或隐藏自己的实现
-  providers: []
+  providers: [
+    OrderService
+  ]
 })
 
 export class OrderModule {

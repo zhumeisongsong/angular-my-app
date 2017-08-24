@@ -1,5 +1,5 @@
 <div class="container">
-  <section *ngFor="let product of products" [routerLink]="['/product', product.pdId]">
+  <section *ngFor="let product of products" [routerLink]="[product.pdId]">
     <img src="{{product.coverUrl}}" alt="cover">
 
     <div class="text-con">

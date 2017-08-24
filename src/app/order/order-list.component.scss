@@ -1,6 +1,10 @@
 @import "../../assets/stylesheet/variable";
 @import "../../assets/stylesheet/mixin";
 
+.container {
+  z-index: map-get($global-z-index,b)-20;
+}
+
 .order-list {
   .order-item {
     margin-bottom: 10px;
@@ -24,7 +28,7 @@
 }
 
 .pd-item {
-  padding: map-get($global-space,b);
+  padding: map-get($global-space, b);
   margin-bottom: 5px;
   background-color: map-get($global-color, j);
   @include flex-box (row, flex-start, flex-start);
@@ -33,15 +37,15 @@
   }
   .text-con {
     width: 75%;
-    padding-left: map-get($global-space,b);
-    .title{
+    padding-left: map-get($global-space, b);
+    .title {
       line-height: 1.2;
     }
   }
-  .total{
+  .total {
     width: 100%;
     height: 30px;
-    padding: map-get($global-space,b);
+    padding: map-get($global-space, b);
     line-height: 30px;
   }
 }

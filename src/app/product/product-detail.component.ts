@@ -27,6 +27,7 @@ export class ProductDetailComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    console.log(this.route);
     this.route.params
       .switchMap((params: Params) => this.productService.getProduct(+params['id']))
       .subscribe(product => this.product = product);
