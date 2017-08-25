@@ -1,11 +1,7 @@
 <div class="container">
   <ul class="tab-nav">
-    <li *ngFor="let nav of navs">
-      <!--(click)="onSelect(nav)"-->
-      <!--[class.selected]="isSelected(nav)"-->
-      {{text}}
-      {{name}}
-      {{id}}
+    <li *ngFor="let nav of navs" [routerLink]="['/order',nav.name]" routerLinkActive="active">
+      {{nav.text}}
     </li>
   </ul>
 </div>

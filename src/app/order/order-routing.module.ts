@@ -24,14 +24,17 @@ const orderRoutes: Routes = [
           },
         ]
       },
+
       {
         path: ':id',
         component: OrderDetailComponent
       },
+
       {
         path: 'confirm',
         component: OrderConfirmComponent
       },
+
     ]
   },
 ];

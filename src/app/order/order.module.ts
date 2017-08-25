@@ -10,6 +10,8 @@ import {OrderListComponent} from './order-list.component';
 import {OrderDetailComponent} from './order-detail.component';
 
 import {OrderService} from'./order.service';
+import {OrderNavService} from './order-nav.service';
+
 import {OrderRoutingModule} from './order-routing.module';
 
 @NgModule({
@@ -28,6 +30,7 @@ import {OrderRoutingModule} from './order-routing.module';
   ],
   exports: [],//特性模块可以对其他模块暴露或隐藏自己的实现
   providers: [
+    OrderNavService,
     OrderService
   ]
 })

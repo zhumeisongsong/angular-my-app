@@ -2,7 +2,10 @@ import 'rxjs/add/operator/switchMap';
 import{Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from "@angular/router";
 
+//order nav
 import {OrderNav} from './order-nav';
+import {OrderNavService} from './order-nav.service';
+
 import {OrderService} from './order.service';
 
 @Component({
@@ -16,7 +19,7 @@ export class OrderNavComponent implements OnInit {
   selectedStatus: number;
 
 
-  constructor(private service: OrderService,
+  constructor(private navService: OrderNavService,
               private route: ActivatedRoute,
               private router: Router) {
   }
@@ -26,18 +29,18 @@ export class OrderNavComponent implements OnInit {
   // }
 
   ngOnInit() {
-    // this.service.getOrderNavs();
-    // this.navs = this.route.ParamMap
-    //   .switchMap((params: ParamMap) => {
-    //     // this.selectedStatus = +params.get('name');
-    //     // return
-    //   });
-    this.service.getOrderNavs()
+    this.navService.getOrderNavs()
       .then(navs=>{
         this.navs=navs;
-        console.log(navs);
       });
   }
+
+  // this.service.getOrderNavs();
+  // this.navs = this.route.ParamMap
+  //   .switchMap((params: ParamMap) => {
+  //     // this.selectedStatus = +params.get('name');
+  //     // return
+  //   });
 
   // onSelect(status:text){
   //   this.selectedStatus =

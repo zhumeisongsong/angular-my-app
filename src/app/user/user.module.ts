@@ -5,7 +5,11 @@ import {FormsModule} from '@angular/forms';
 import {UserCenterComponent} from './user-center.component';
 import {SignInComponent} from './sign-in.component';
 
+import {OrderNavService} from '../order/order-nav.service';
+import {UserService} from './user.service';
+
 import {UserRoutingModule} from "./user-routing.module";
+
 
 @NgModule({
   imports: [
@@ -18,7 +22,10 @@ import {UserRoutingModule} from "./user-routing.module";
     SignInComponent
   ],
   exports: [],
-  providers: []
+  providers: [
+    OrderNavService,
+    UserService
+  ]
 })
 
 export class UserModule {
