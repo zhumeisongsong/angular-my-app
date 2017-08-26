@@ -54,6 +54,7 @@
     text-align: center;
     float: left;
     @include flex-box(column, center, center);
+    cursor: pointer;
     p {
       padding-top: 2px;
       font-size: 12px;
@@ -72,6 +73,7 @@
     color: #fff;
     @include flex-box(row, center, center);
     float: left;
+    cursor: pointer;
   }
   .btn-cart {
     background-color: map-get($global-color, a);

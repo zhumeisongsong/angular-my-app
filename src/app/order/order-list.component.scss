@@ -2,7 +2,13 @@
 @import "../../assets/stylesheet/mixin";
 
 .container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding-top:49px ;
   z-index: map-get($global-z-index,b)-20;
+  background-color: map-get($global-color, k);
 }
 
 .order-list {

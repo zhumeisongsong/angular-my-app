@@ -1,11 +1,11 @@
+import 'rxjs/add/operator/switchMap';
+
 import {Component, Input, OnInit, HostBinding} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 
 import {ProductService} from './product.service';
 
 import {Product} from './product';
-
-import 'rxjs/add/operator/switchMap';
 
 // import {slideInDownAnimation} from '../animations';
 
@@ -26,10 +26,11 @@ export class ProductDetailComponent implements OnInit {
               private route: ActivatedRoute) {
   };
 
-  ngOnInit(): void {
-    console.log(this.route);
-    this.route.params
-      .switchMap((params: Params) => this.productService.getProduct(+params['id']))
-      .subscribe(product => this.product = product);
+  ngOnInit() {
+    this.route.paramMap
+      .switchMap((params: ParamMap) => this.productService.getProduct(+params.get('id')))
+      .subscribe(product => {
+        this.product = product
+      });
   }
 }

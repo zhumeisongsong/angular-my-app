@@ -5,7 +5,7 @@ import "rxjs/add/operator/map";
 import {Product} from "./product";
 
 @Injectable()
-export class HeroSearchService {
+export class ProductSearchService {
 
   constructor(private http: Http) {
   }

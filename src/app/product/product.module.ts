@@ -6,6 +6,8 @@ import {ProductComponent} from './product.component';
 import {ProductListComponent} from './product-list.component';
 import {ProductDetailComponent} from './product-detail.component';
 
+import {ProductSearchComponent} from './product-search.component';
+
 import {ProductService} from './product.service';
 import {ProductRoutingModule} from "./product-routing.module";
 
@@ -19,6 +21,7 @@ import {ProductRoutingModule} from "./product-routing.module";
     ProductComponent,
     ProductListComponent,
     ProductDetailComponent,
+    ProductSearchComponent
   ],
   exports: [],
   providers: [

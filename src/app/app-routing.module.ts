@@ -5,15 +5,20 @@ import {RouterModule, Routes} from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'order',
-    loadChildren: 'app/order/order.module#OrderModule',
+    path:'product',
+    loadChildren:'app/product/product.module#ProductModule',
     data: { preload: true }
   },
-  // {
-  //   path: 'admin',
-  //   loadChildren: 'app/admin/admin.module#AdminModule',
-  //   canLoad: [AuthGuard]
-  // },
+  {
+    path: 'cart',
+    loadChildren: 'app/cart/cart.module#CartModule',
+    data: { preload: true }
+  },
+  {
+    path: 'user',
+    loadChildren: 'app/user/user.module#UserModule',
+    // canLoad: [AuthGuard]
+  },
   {
     path: '',
     redirectTo: '/product',

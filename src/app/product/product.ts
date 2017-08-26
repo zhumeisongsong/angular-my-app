@@ -1,5 +1,5 @@
 export class Product {
-  pdId: number;
+  id:number;
   name: string;
   listIntro: string;
   detailIntro: string;

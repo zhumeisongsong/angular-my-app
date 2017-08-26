@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
+import {UserComponent} from './user.component';
 import {UserCenterComponent} from './user-center.component';
 import {SignInComponent} from './sign-in.component';
 
@@ -18,6 +19,7 @@ import {UserRoutingModule} from "./user-routing.module";
     UserRoutingModule
   ],
   declarations: [
+    UserComponent,
     UserCenterComponent,
     SignInComponent
   ],
