@@ -7,7 +7,9 @@ html {
 body {
   position: relative;
   width: 100%;
+  max-width: 1024px;
   height: 100%;
+  margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   font-size: map-get($global-font-size, nomal);
   color: map-get($global-color, b);
@@ -29,6 +31,12 @@ h1 {
 h2 {
   font-size: 16px;
   font-weight: normal;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .text-sub {
@@ -92,6 +100,19 @@ h2 {
   }
   .text-price {
     margin-bottom: 6px;
+  }
+}
+
+.arrow-right {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    right: map-get($global-space, b);
+    width: 20px;
+    height: 20px;
+    background: url("../../assets/image/icon/arrow-right.svg") center no-repeat;
+    background-size: contain;
   }
 }
 

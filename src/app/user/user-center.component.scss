@@ -66,13 +66,6 @@
 .arrow-right {
   position: relative;
   &::after {
-    content: "";
-    position: absolute;
-    right: map-get($global-space, b);
     top: 14px;
-    width: 20px;
-    height: 20px;
-    background: url("../../assets/image/icon/arrow-right.svg") center no-repeat;
-    background-size: contain;
   }
 }

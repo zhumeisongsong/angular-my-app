@@ -7,5 +7,5 @@ import{Component} from '@angular/core';
 })
 
 export class OrderConfirmComponent {
-
+  title:'确认订单';
 }

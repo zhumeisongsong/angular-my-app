@@ -5,18 +5,17 @@ import {RouterModule, Routes} from '@angular/router';
 
 export const routes: Routes = [
   {
-    path:'product',
-    loadChildren:'app/product/product.module#ProductModule',
-    data: { preload: true }
-  },
-  {
     path: 'cart',
     loadChildren: 'app/cart/cart.module#CartModule',
-    data: { preload: true }
   },
   {
     path: 'user',
     loadChildren: 'app/user/user.module#UserModule',
+    // canLoad: [AuthGuard]
+  },
+  {
+    path: 'order',
+    loadChildren: 'app/order/order.module#OrderModule',
     // canLoad: [AuthGuard]
   },
   {

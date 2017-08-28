@@ -12,6 +12,9 @@ import {InMemoryDataService}  from './in-memory-data.service';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+//angular material module
+import {CustomMaterialModule} from './custom-material.module';
+
 // App root
 import {AppComponent} from './app.component';
 
@@ -28,6 +31,7 @@ import {UserModule} from './user/user.module';
     HttpModule,
     BrowserAnimationsModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
+    CustomMaterialModule,
     AppRoutingModule,
 
     ProductModule,

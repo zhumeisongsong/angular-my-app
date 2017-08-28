@@ -1,0 +1,17 @@
+@import "../../assets/stylesheet/variable";
+@import "../../assets/stylesheet/mixin";
+
+.container {
+  min-height: 100%;
+  background-color: map-get($global-color, l);
+  z-index: map-get($global-z-index, b);
+}
+
+.address-con {
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.order-con {
+  background-color: #fff;
+}

@@ -6,6 +6,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
+  max-width: 1024px;
   height: 48px;
   background-color: #fff;
   z-index: map-get($global-z-index,a)+10;
@@ -66,4 +67,11 @@
     }
   }
 
+}
+
+@media (min-width: 1024px) {
+  .nav-bar {
+    left: 50%;
+    margin-left: -512px;
+  }
 }

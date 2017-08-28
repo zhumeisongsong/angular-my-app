@@ -2,11 +2,19 @@ import {Order} from './order';
 
 export const ORDERS = [
   {
-    orderId: 1,
+    id: 1,
     status: 'purchase',
+    uId:[11,12],
+    pdList:[{
+      test:'test'
+    }]
   },
   {
-    orderId: 2,
+    id: 2,
     status: 'purchase',
+    uId:[11,12],
+    pdList:[{
+      test:'test22222'
+    }]
   },
 ];

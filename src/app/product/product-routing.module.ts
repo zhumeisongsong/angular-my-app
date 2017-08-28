@@ -8,7 +8,7 @@ import {ProductSearchComponent} from "./product-search.component";
 
 const productRoutes: Routes = [
   {
-    path: '',
+    path: 'product',
     component: ProductComponent,
     children: [
       {
@@ -22,6 +22,7 @@ const productRoutes: Routes = [
       {
         path: '',
         component: ProductListComponent,
+        data: { preload: true }
       },
     ]
   },
@@ -36,4 +37,3 @@ const productRoutes: Routes = [
 
 export class ProductRoutingModule {
 }
-//子组件与子路由 比如list嵌套了swiper swiper是list的子组件？

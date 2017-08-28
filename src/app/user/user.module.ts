@@ -6,7 +6,6 @@ import {UserComponent} from './user.component';
 import {UserCenterComponent} from './user-center.component';
 import {SignInComponent} from './sign-in.component';
 
-import {OrderNavService} from '../order/order-nav.service';
 import {UserService} from './user.service';
 
 import {UserRoutingModule} from "./user-routing.module";
@@ -25,7 +24,6 @@ import {UserRoutingModule} from "./user-routing.module";
   ],
   exports: [],
   providers: [
-    OrderNavService,
     UserService
   ]
 })

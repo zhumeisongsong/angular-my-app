@@ -5,12 +5,12 @@ import {FormsModule} from '@angular/forms';
 
 import {OrderComponent} from './order.component';
 import {OrderConfirmComponent} from './order-confirm.component';
-import {OrderNavComponent} from './order-nav.component';
+import {OrderTabComponent} from './order-tab.component';
 import {OrderListComponent} from './order-list.component';
 import {OrderDetailComponent} from './order-detail.component';
 
 import {OrderService} from'./order.service';
-import {OrderNavService} from './order-nav.service';
+import {OrderTabService} from './order-tab.service';
 
 import {OrderRoutingModule} from './order-routing.module';
 
@@ -24,13 +24,13 @@ import {OrderRoutingModule} from './order-routing.module';
     OrderComponent,
     OrderConfirmComponent,
 
-    OrderNavComponent,
+    OrderTabComponent,
     OrderListComponent,
     OrderDetailComponent
   ],
   exports: [],//特性模块可以对其他模块暴露或隐藏自己的实现
   providers: [
-    OrderNavService,
+    OrderTabService,
     OrderService
   ]
 })

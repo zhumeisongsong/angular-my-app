@@ -1,5 +1,5 @@
 export class Order {
-  odId: number;
+  id: number;
   uId:number;
   status:string;
   creatDate:string;

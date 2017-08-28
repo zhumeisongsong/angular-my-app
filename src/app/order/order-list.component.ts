@@ -1,4 +1,4 @@
-import{Component} from '@angular/core';
+import{Component, Input} from '@angular/core';
 
 @Component({
   selector: 'order-list',
@@ -7,5 +7,5 @@ import{Component} from '@angular/core';
 })
 
 export class OrderListComponent {
-
+  @Input() active = false;
 }

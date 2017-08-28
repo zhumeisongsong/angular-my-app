@@ -13,12 +13,12 @@ import {UserComponent} from "./user.component";
         component: UserComponent,
         children: [
           {
-            path: '',
-            component: UserCenterComponent
-          },
-          {
             path: 'login',
             component: SignInComponent
+          },
+          {
+            path: '',
+            component: UserCenterComponent
           },
         ]
       },
