@@ -1,5 +1,6 @@
 @import "../../assets/stylesheet/variable";
 @import "../../assets/stylesheet/mixin";
+@import "../../assets/stylesheet/extend";
 
 .container {
   margin-bottom: 48px;
@@ -7,6 +8,7 @@
 
 .text-con {
   @include flex-box(row, space-between, flex-end);
+  @extend %pd-text-con;
 }
 
 .btn-con {

@@ -4,7 +4,7 @@
 .container {
   height: 100%;
   padding-bottom: 48px;
-  background-color: map-get($global-color, k);
+  background-color: map-get($global-color, l);
 }
 
 .user-header {
@@ -60,12 +60,5 @@
   img {
     width: 34px;
     padding-right: 10px;
-  }
-}
-
-.arrow-right {
-  position: relative;
-  &::after {
-    top: 14px;
   }
 }

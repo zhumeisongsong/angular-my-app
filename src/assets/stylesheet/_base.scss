@@ -11,7 +11,8 @@ body {
   height: 100%;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
-  font-size: map-get($global-font-size, nomal);
+  font-size: map-get($global-font-size, normal);
+  font-weight: 400;
   color: map-get($global-color, b);
 }
 
@@ -33,6 +34,10 @@ h2 {
   font-weight: normal;
 }
 
+i {
+  font-style: normal;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -52,6 +57,34 @@ h2 {
   background-color: #fff;
   font-size: 12px;
   text-align: center;
+}
+
+.btn-item {
+  @include flex-box(row, center, center);
+  width: 35%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-cart {
+  background-color: map-get($global-color, a);
+}
+
+.btn-purchase {
+  background-color: map-get($global-color, c);
+}
+
+.btn-light {
+  border-color: map-get($global-color, i);
+}
+
+.btn-pink {
+  border-color: map-get($global-color, a);
+  color:map-get($global-color, e);
 }
 
 .input-group {
@@ -88,18 +121,18 @@ h2 {
 
 .text-con {
   width: 100%;
-  padding: map-get($global-space,b)*2 map-get($global-space, b);
-  background-color: #fff;
   .text-title {
+    width: 100%;
     margin-bottom: 6px;
     line-height: 1.4;
   }
   .text-sub {
+    width: 100%;
     margin-bottom: 6px;
     line-height: 1.4;
   }
   .text-price {
-    margin-bottom: 6px;
+    width: 100%;
   }
 }
 
@@ -108,9 +141,11 @@ h2 {
   &::after {
     content: "";
     position: absolute;
+    top: 50%;
     right: map-get($global-space, b);
     width: 20px;
     height: 20px;
+    margin-top: -10px;
     background: url("../../assets/image/icon/arrow-right.svg") center no-repeat;
     background-size: contain;
   }

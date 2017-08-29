@@ -24,7 +24,7 @@ const orderRoutes: Routes = [
       },
       {
         path: '',
-        component: OrderListComponent,//tab
+        component: OrderTabComponent,//tab
       },
     ]
   },

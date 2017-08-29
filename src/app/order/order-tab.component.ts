@@ -13,7 +13,7 @@ import {OrderListComponent} from "./order-list.component";
 @Component({
   selector: 'order-tab',
   templateUrl: './order-tab.component.html',
-  styleUrls: ['./order-tab.component.scss']
+  styleUrls: ['./order-tab.component.scss','./order-pd-list.scss']
 })
 
 export class OrderTabComponent implements AfterContentInit {

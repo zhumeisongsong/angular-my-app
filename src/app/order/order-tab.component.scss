@@ -2,7 +2,9 @@
 @import "../../assets/stylesheet/mixin";
 
 .container {
-  z-index: map-get($global-z-index,b);
+  height: 100%;
+  background-color: map-get($global-color, l);
+  z-index: map-get($global-z-index, b);
 }
 
 .tab-nav {
@@ -13,7 +15,7 @@
   font-size: map-get($global-font-size,normal)+2px;
   background-color: #fff;
   color: map-get($global-color, b);
-  li {
+  a {
     width: 66px;
     text-align: center;
     height: 48px;
@@ -22,7 +24,28 @@
   }
 }
 
-.active{
-  color: map-get($global-color,a);
-  border-bottom:1px solid map-get($global-color,a);
+.active {
+  color: map-get($global-color, a);
+  border-bottom: 1px solid map-get($global-color, a);
+}
+
+.tab-con {
+  padding: 0;
+}
+
+.control-btn {
+  @include flex-box(row, flex-end, center);
+  width: 100%;
+  height: 40px;
+  padding: 0 map-get($global-space,b);
+  button {
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 15px;
+    font-size: map-get($global-font-size,normal);
+    + button {
+      margin-left: 10px;
+    }
+  }
 }
