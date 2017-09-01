@@ -79,12 +79,13 @@ i {
 }
 
 .btn-light {
-  border-color: map-get($global-color, i);
+  border-color: map-get($global-color, b);
+  color: map-get($global-color,b);
 }
 
 .btn-pink {
   border-color: map-get($global-color, a);
-  color:map-get($global-color, e);
+  color: map-get($global-color, e);
 }
 
 .input-group {

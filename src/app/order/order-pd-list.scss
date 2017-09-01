@@ -12,7 +12,11 @@
 }
 
 .order-con {
+  margin-bottom: 10px;
   background-color: #fff;
+  &:last-child{
+    margin-bottom: 0;
+  }
   header {
     @include flex-box(row, flex-start, center);
     height: 40px;
