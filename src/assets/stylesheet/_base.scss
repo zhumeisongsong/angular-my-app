@@ -60,11 +60,11 @@ i {
 }
 
 .btn-item {
-  @include flex-box(row, center, center);
+  //@include flex-box(row, center, center);
   width: 35%;
   height: 100%;
   float: left;
-  text-align: center;
+  //text-align: center;
   font-size: 14px;
   color: #fff;
   cursor: pointer;

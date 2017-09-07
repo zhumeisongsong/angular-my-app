@@ -9,5 +9,5 @@ export class Product {
   userPurchase: number;
   // storeName: string;
   // storeId: number;
-  richText: string;
+  richText: any;
 }
