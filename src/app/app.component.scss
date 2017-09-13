@@ -1,16 +1,11 @@
 @import "../assets/stylesheet/variable";
 @import "../assets/stylesheet/mixin";
+@import "../assets/stylesheet/extend";
 
 .nav-bar {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  max-width: 1024px;
-  height: 48px;
-  background-color: #fff;
   z-index: map-get($global-z-index,a)+10;
   @include flex-box(row, center, center);
+  @extend %nav-bar;
   .nav-item {
     width: 33.3%;
     height: 100%;
@@ -65,13 +60,5 @@
         }
       }
     }
-  }
-
-}
-
-@media (min-width: 1024px) {
-  .nav-bar {
-    left: 50%;
-    margin-left: -512px;
   }
 }

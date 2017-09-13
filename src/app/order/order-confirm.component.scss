@@ -39,8 +39,8 @@
   }
 }
 
-nav {
-  @extend %nav-footer;
+.nav-bar {
+  @extend %nav-bar;
   @include flex-box(row, flex-end, center);
   p {
     padding-right: map-get($global-space, b);

@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule}   from '@angular/forms';
-import {HttpModule}    from '@angular/http';
+
+import {HttpClientModule} from '@angular/common/http';
 
 // Routing module
 import {AppRoutingModule} from './app-routing.module';
@@ -27,8 +27,6 @@ import {UserModule} from './user/user.module';
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
     BrowserAnimationsModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     CustomMaterialModule,
@@ -38,6 +36,8 @@ import {UserModule} from './user/user.module';
     CartModule,
     OrderModule,
     UserModule,
+
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,

@@ -1,16 +1,10 @@
-%nav-footer {
-  z-index: map-get($global-z-index, b);
+%nav-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  max-width: 1024px;
   height: 48px;
-  background-color: #fff;
-  float: left;
-}
-
-%pd-text-con{
-  padding: map-get($global-space,b)*2 map-get($global-space, b);
   background-color: #fff;
 }
 
@@ -24,3 +18,10 @@
   float: left;
   cursor: pointer;
 }
+
+%pd-text-con{
+  padding: map-get($global-space,b)*2 map-get($global-space, b);
+  background-color: #fff;
+}
+
+

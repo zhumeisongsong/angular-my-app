@@ -41,8 +41,10 @@
   }
 }
 
-nav {
-  @extend %nav-footer;
+.nav-bar {
+  z-index: map-get($global-z-index, b);
+  @extend %nav-bar;
+  float: left;
   .icon-con {
     width: 15%;
     height: 100%;

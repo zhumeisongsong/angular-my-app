@@ -50,8 +50,9 @@ i {
 }
 
 .btn {
-  width: 100%;
-  padding: 5px 0;
+  min-width: 100px;
+  height: 30px;
+  padding: 0 10px;
   border: 1px solid map_get($global-color, b);
   border-radius: 3px;
   background-color: #fff;
@@ -152,3 +153,9 @@ i {
   }
 }
 
+@media (min-width: 1024px) {
+  .nav-bar {
+    left: 50%!important;
+    margin-left: -512px;
+  }
+}
