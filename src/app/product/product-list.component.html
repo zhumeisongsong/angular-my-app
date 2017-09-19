@@ -1,10 +1,10 @@
 <div class="container">
-  <section *ngFor="let product of products" [routerLink]="[product.id]">
+  <section *ngFor="let product of products" [routerLink]="[product.productId]">
     <img src="{{product.coverUrl}}" alt="cover">
 
     <div class="text-con">
       <div class="col-xs-9">
-        <h2 class="text-title line-ellipsis">{{product.name}}</h2>
+        <h2 class="text-title line-ellipsis">{{product.productName}}</h2>
         <p class="text-sub">{{product.listIntro}}</p>
         <p class="text-price">{{product.price}}元</p>
       </div>

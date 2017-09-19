@@ -1,9 +1,11 @@
 import {NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 
+import {UserComponent} from "./user.component";
 import {UserCenterComponent} from "./user-center.component";
 import {SignInComponent} from "./sign-in.component";
-import {UserComponent} from "./user.component";
+import {AddressListComponent} from "./address-list.component";
+
 
 @NgModule({
   imports: [
@@ -15,6 +17,10 @@ import {UserComponent} from "./user.component";
           {
             path: 'login',
             component: SignInComponent
+          },
+          {
+            path:'address',
+            component:AddressListComponent
           },
           {
             path: '',
