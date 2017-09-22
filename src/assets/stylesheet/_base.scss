@@ -38,6 +38,10 @@ i {
   font-style: normal;
 }
 
+.hidden{
+  display: none!important;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -57,36 +61,19 @@ i {
   border-radius: 3px;
   background-color: #fff;
   font-size: 12px;
-  text-align: center;
-}
-
-.btn-item {
-  //@include flex-box(row, center, center);
-  width: 35%;
-  height: 100%;
-  float: left;
-  //text-align: center;
-  font-size: 14px;
-  color: #fff;
   cursor: pointer;
 }
 
-.btn-cart {
+.btn-default {
   background-color: map-get($global-color, a);
+  font-size: 14px;
+  color: #fff;
 }
 
-.btn-purchase {
+.btn-black{
   background-color: map-get($global-color, c);
-}
-
-.btn-light {
-  border-color: map-get($global-color, b);
-  color: map-get($global-color,b);
-}
-
-.btn-pink {
-  border-color: map-get($global-color, a);
-  color: map-get($global-color, e);
+  font-size: 14px;
+  color: #fff;
 }
 
 .input-group {

@@ -7,9 +7,6 @@
   margin-bottom: 48px;
 }
 
-.swiper-con {
-}
-
 .text-con {
   @extend %pd-text-con;
   .price {
@@ -61,5 +58,11 @@
       width: 22px;
       margin: 0 auto;
     }
+  }
+
+  .btn-item {
+    width: 35%;
+    height: 100%;
+    float: left;
   }
 }

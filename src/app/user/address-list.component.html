@@ -1,0 +1,27 @@
+<section class="container">
+
+  <ul>
+    <li *ngFor="let address of addresses |async" [routerLink]="[address.id]">
+      <section class="address-con">
+        <div class="col-xs-7 user-name">{{address.consignee}}</div>
+        <div class="col-xs-5 user-phone">{{address.mobile}}</div>
+        <div class="col-xs-12 user-address">
+          {{address.province}}{{address.city}}{{address.district}}{{address.address}}
+        </div>
+      </section>
+
+      <section class="control-bar ui-border-t">
+        <div>默认地址</div>
+        <div>编辑</div>
+        <div>删除</div>
+      </section>
+    </li>
+  </ul>
+
+  <nav class="nav-bar">
+    <button class="btn-default" routerLink="/user/address/add">添加新地址</button>
+  </nav>
+
+  <!--<button (click)="getAddresses()" class="btn btn-primary">Refresh</button>-->
+
+</section>

@@ -8,7 +8,7 @@ import {ProductSearchComponent} from "./product-search.component";
 
 const productRoutes: Routes = [
   {
-    path: 'product',
+    path: '',
     component: ProductComponent,
     children: [
       {

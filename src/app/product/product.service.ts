@@ -11,7 +11,7 @@ export class ProductService {
   private header = new Headers({
     'Content-Type': 'application/json'
   });
-  private productUrl = 'http://120.24.19.157:8080/index.php/products';// URL to web api
+  private productUrl = '/index.php/products';// URL to web api
 
   constructor(private http: HttpClient) {
   }

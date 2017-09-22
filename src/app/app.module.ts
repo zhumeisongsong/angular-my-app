@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {ReactiveFormsModule} from  '@angular/forms';
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -17,8 +18,13 @@ import {CustomMaterialModule} from './custom-material.module';
 
 // App root
 import {AppComponent} from './app.component';
+import {PageNotFoundComponent} from "./page-not-found.component";
 
-// Feature modules 不导入的module被异步获取并加载
+import {HeroListComponent} from './reactive-forms/hero-list.component';
+import {HeroDetailComponent} from './reactive-forms/hero-detail.component';
+import {HeroService} from './reactive-forms/hero.service';
+
+// Feature modules async
 import {ProductModule} from './product/product.module';
 import {CartModule} from './cart/cart.module';
 import {OrderModule} from './order/order.module';
@@ -27,6 +33,7 @@ import {UserModule} from './user/user.module';
 @NgModule({
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     CustomMaterialModule,
@@ -41,8 +48,19 @@ import {UserModule} from './user/user.module';
   ],
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
+
+    HeroListComponent,
+    HeroDetailComponent
   ],
-  providers: [],// 这里注册的是全应用级服务
+  exports: [
+    AppComponent,
+    HeroDetailComponent,
+    HeroListComponent
+  ],
+  providers: [
+    HeroService
+  ], //global service
   bootstrap: [AppComponent]
 })
 

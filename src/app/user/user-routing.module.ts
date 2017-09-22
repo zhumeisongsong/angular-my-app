@@ -3,9 +3,11 @@ import {RouterModule} from "@angular/router";
 
 import {UserComponent} from "./user.component";
 import {UserCenterComponent} from "./user-center.component";
-import {SignInComponent} from "./sign-in.component";
-import {AddressListComponent} from "./address-list.component";
 
+import {SignInComponent} from "./sign-in.component";
+
+import {AddressListComponent} from "./address-list.component";
+import {AddressDetailComponent} from "./address-detail.component";
 
 @NgModule({
   imports: [
@@ -20,7 +22,15 @@ import {AddressListComponent} from "./address-list.component";
           },
           {
             path:'address',
-            component:AddressListComponent
+            component:AddressListComponent,
+          },
+          {
+            path: 'address/add',
+            component: AddressDetailComponent
+          },
+          {
+            path: 'address/:id',
+            component: AddressDetailComponent
           },
           {
             path: '',

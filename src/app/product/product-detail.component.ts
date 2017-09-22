@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/switchMap';
 
-import {Component, Input, OnInit, HostBinding} from '@angular/core';
+import {Component, Input, OnInit, HostBinding, Output} from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 
 import {ProductService} from './product.service';

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'user-center',
@@ -6,6 +6,8 @@ import {Component} from '@angular/core';
   styleUrls: ['./user-center.component.scss'],
 })
 
-export class UserCenterComponent{
+export class UserCenterComponent implements OnInit {
+  ngOnInit() {
 
+  }
 }

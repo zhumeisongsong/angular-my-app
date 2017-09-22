@@ -1,4 +1,4 @@
-<nav class="nav-bar ui-border-t">
+<nav class="nav-bar ui-border-t" *ngIf="isHidden()">
   <a routerLink="/product" routerLinkActive="active" class="nav-item">
     <span class="nav-icon"></span>
     <span class="nav-title">首页</span>

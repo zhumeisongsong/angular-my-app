@@ -55,3 +55,13 @@
     line-height: 30px;
   }
 }
+
+.btn-empty-default{
+  border-color: map-get($global-color, a);
+  color: map-get($global-color, e);
+}
+
+.btn-empty-black {
+  border-color: map-get($global-color, b);
+  color: map-get($global-color,b);
+}
