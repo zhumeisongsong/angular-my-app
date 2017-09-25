@@ -14,7 +14,7 @@ import {AddressService} from './address.service';
 @Component({
   selector: 'address-detail',
   templateUrl: './address-detail.component.html',
-  styles: ['./address-detail.component.scss']
+  styleUrls: ['./address-detail.component.scss']
 })
 
 export class AddressDetailComponent implements OnChanges {

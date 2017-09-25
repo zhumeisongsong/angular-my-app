@@ -1,7 +1,7 @@
 <section class="container">
 
   <ul>
-    <li *ngFor="let address of addresses |async" [routerLink]="[address.id]">
+    <li *ngFor="let address of addresses |async">
       <section class="address-con">
         <div class="col-xs-7 user-name">{{address.consignee}}</div>
         <div class="col-xs-5 user-phone">{{address.mobile}}</div>
@@ -12,14 +12,14 @@
 
       <section class="control-bar ui-border-t">
         <div>默认地址</div>
-        <div>编辑</div>
-        <div>删除</div>
+        <div [routerLink]="[address.id]" class="control-item">编辑</div>
+        <div class="control-item" (click)="deleteAddress(address)">删除</div>
       </section>
     </li>
   </ul>
 
   <nav class="nav-bar">
-    <button class="btn-default" routerLink="/user/address/add">添加新地址</button>
+    <button class="btn-default" [routerLink]="['add']">添加新地址</button>
   </nav>
 
   <!--<button (click)="getAddresses()" class="btn btn-primary">Refresh</button>-->

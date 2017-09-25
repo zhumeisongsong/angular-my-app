@@ -5,7 +5,6 @@
 .container {
   height: 100%;
   overflow-y: scroll;
-  position: relative;
 }
 
 ul {
@@ -26,17 +25,21 @@ li {
     margin-top: 10px;
   }
 }
-.address-con{
-  width:100%;
+
+.address-con {
+  width: 100%;
   height: auto;
   padding: map-get($global-space, a);
   @include flex-box(row, space-between, center);
 }
 
-.control-bar{
+.control-bar {
   width: 100%;
   padding: map-get($global-space, a);
   @include flex-box(row, space-between, center);
+  .control-item {
+    cursor: pointer;
+  }
 }
 
 .nav-bar {

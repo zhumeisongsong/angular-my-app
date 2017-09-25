@@ -12,12 +12,6 @@ import {AddressService} from './address.service';
 })
 
 export class AddressListComponent implements OnInit {
-  @Output() onNavShowed = new EventEmitter<boolean>();
-  navShowed = false;
-
-
-  addresses: Observable<Address[]>;
-
   constructor(private addressService: AddressService) {
   }
 
@@ -25,8 +19,8 @@ export class AddressListComponent implements OnInit {
     this.getAddresses();
   }
 
+  addresses: Observable<Address[]>;
   getAddresses() {
-    // this.isLoading = true;
     this.addresses = this.addressService.getAddresses();
   }
 

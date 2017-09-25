@@ -25,10 +25,6 @@ import {AddressDetailComponent} from "./address-detail.component";
             component:AddressListComponent,
           },
           {
-            path: 'address/add',
-            component: AddressDetailComponent
-          },
-          {
             path: 'address/:id',
             component: AddressDetailComponent
           },
