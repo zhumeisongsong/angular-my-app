@@ -19,6 +19,7 @@
     <header class="ui-border-t"></header>
     <div class="rich-text">{{product.richText}}</div>
   </div>
+
   <!--<div class="store-con arrow-right">-->
   <!--<span>{{product.storeName}}</span>-->
   <!--<span>进入店铺</span>-->
@@ -35,8 +36,11 @@
       </div>
       <p>购物车</p>
     </a>
-    <button class="btn-item btn-default">加入购物车</button>
+    <!--TODO：Here is the emitter (click)="Popup(false)"-->
+    <button class="btn-item btn-default" (click)="addToCart()">加入购物车</button>
     <button class="btn-item btn-black">立即购买</button>
   </nav>
-
 </div>
+
+<!--<pop-up [class.hidden]="isHidden" (onHidden)="onHidden($event)"></pop-up>-->
+

@@ -5,10 +5,11 @@ import {ProductComponent} from "./product.component";
 import {ProductListComponent} from "./product-list.component";
 import {ProductDetailComponent} from "./product-detail.component";
 import {ProductSearchComponent} from "./product-search.component";
+import {SetParameterComponent} from "./set-parameter.component";
 
 const productRoutes: Routes = [
   {
-    path: '',
+    path: 'product',
     component: ProductComponent,
     children: [
       {
@@ -22,7 +23,7 @@ const productRoutes: Routes = [
       {
         path: '',
         component: ProductListComponent,
-        data: { preload: true }
+        data: {preload: true},
       },
     ]
   },

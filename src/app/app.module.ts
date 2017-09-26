@@ -18,7 +18,7 @@ import {CustomMaterialModule} from './custom-material.module';
 
 // App root
 import {AppComponent} from './app.component';
-import {PageNotFoundComponent} from "./page-not-found.component";
+import {PageNotFoundComponent} from './page-not-found.component';
 
 import {HeroListComponent} from './reactive-forms/hero-list.component';
 import {HeroDetailComponent} from './reactive-forms/hero-detail.component';
@@ -51,12 +51,9 @@ import {UserModule} from './user/user.module';
     PageNotFoundComponent,
 
     HeroListComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
   ],
   exports: [
-    AppComponent,
-    HeroDetailComponent,
-    HeroListComponent
   ],
   providers: [
     HeroService

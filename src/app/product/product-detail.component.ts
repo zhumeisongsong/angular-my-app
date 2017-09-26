@@ -1,29 +1,23 @@
 import 'rxjs/add/operator/switchMap';
 
-import {Component, Input, OnInit, HostBinding, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 
 import {ProductService} from './product.service';
 
 import {Product} from './product';
 
-// import {slideInDownAnimation} from '../animations';
-
 @Component({
   selector: 'pd-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss'],
-  // animations:[slideInDownAnimation],
 })
 
 export class ProductDetailComponent implements OnInit {
   @Input() product: Product;
 
-  // @HostBinding('@routeAnimation') routeAnimation = true;
-  // @HostBinding('style.position')  position = 'relative';
-
   constructor(private productService: ProductService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,) {
   };
 
   ngOnInit() {
@@ -32,5 +26,23 @@ export class ProductDetailComponent implements OnInit {
       .subscribe(product => {
         this.product = product
       });
+  }
+
+  //TODO:popup ngclass
+  isHidden: boolean = true;
+
+  Popup(isHidden: boolean) {
+    this.isHidden = isHidden;
+  }
+
+  onHidden(close: boolean) {
+    this.isHidden = close;
+  }
+
+  addToCart(){
+    console.log('should login in')
+
+
+
   }
 }
