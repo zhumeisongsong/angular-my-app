@@ -2,11 +2,8 @@ import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 
 import {OrderComponent} from "./order.component";
-
 import {OrderTabComponent} from "./order-tab.component";
-import {OrderListComponent} from './order-list.component';
 import {OrderDetailComponent} from "./order-detail.component";
-
 import {OrderConfirmComponent} from "./order-confirm.component";
 
 const orderRoutes: Routes = [
@@ -18,13 +15,13 @@ const orderRoutes: Routes = [
         path: 'confirm',
         component: OrderConfirmComponent
       },
-      // {
-      //   path: ':id',
-      //   component: OrderDetailComponent
-      // },
+      {
+        path: ':id',
+        component: OrderDetailComponent
+      },
       {
         path: '',
-        component: OrderTabComponent,//tab
+        component: OrderTabComponent,
       },
     ]
   },

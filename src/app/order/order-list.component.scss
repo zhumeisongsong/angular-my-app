@@ -6,7 +6,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  padding-top:49px ;
+  padding-top: 49px;
   z-index: map-get($global-z-index,b)-20;
   background-color: map-get($global-color, k);
 }
@@ -28,7 +28,7 @@
 .pd-list {
   width: 100%;
   background-color: #fff;
-  li:nth-last-child(2) {
+  li:nth-last-child(1) {
     margin-bottom: 0 !important;
   }
 }
@@ -56,12 +56,17 @@
   }
 }
 
-.btn-empty-default{
-  border-color: map-get($global-color, a);
-  color: map-get($global-color, e);
-}
-
-.btn-empty-black {
-  border-color: map-get($global-color, b);
-  color: map-get($global-color,b);
+.control-btn {
+  @include flex-box(row, flex-end, center);
+  width: 100%;
+  padding: map-get($global-space, b);
+  button {
+    width: 80px;
+    min-width: auto;
+    border-radius: 6px;
+    font-size: map-get($global-font-size, normal);
+    + button {
+      margin-left: 10px;
+    }
+  }
 }

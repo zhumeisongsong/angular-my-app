@@ -1,16 +1,10 @@
 <div class="container">
   <nav class="tab-nav">
-    <!--<a *ngFor="let nav of navs"-->
-    <!--[routerLink]="['/order']"-->
-    <!--routerLinkActive #rla="active"-->
-    <!--[active]="rla.isActive">-->
-    <!--{{nav.text}}-->
-    <!--</a>-->
-    <a>sdsds</a>
+    <a *ngFor="let nav of navs" >{{nav.title}}</a>
   </nav>
 
   <section class="tab-con">
-    <order-detail></order-detail>
+    <order-list></order-list>
   </section>
 </div>
 

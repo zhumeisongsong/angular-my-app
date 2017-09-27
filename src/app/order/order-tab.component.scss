@@ -8,10 +8,14 @@
 }
 
 .tab-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
-  padding: 0 map-get($global-space, b);
+  padding: 0 map-get($global-space, b)*2;
   border-bottom: 1px solid map-get($global-color, d);
   @include flex-box(row, space-between, center);
+  z-index: map-get($global-z-index, f);
   font-size: map-get($global-font-size,normal)+2px;
   background-color: #fff;
   color: map-get($global-color, b);
@@ -30,18 +34,5 @@
 }
 
 .tab-con {
-  padding: 0;
-}
-
-.control-btn {
-  @include flex-box(row, flex-end, center);
-  width: 100%;
-  padding: map-get($global-space, b);
-  button {
-    border-radius: 6px;
-    font-size: map-get($global-font-size, normal);
-    + button {
-      margin-left: 10px;
-    }
-  }
+  padding: 48px 0 20px 0;
 }

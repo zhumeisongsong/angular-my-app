@@ -76,6 +76,16 @@ i {
   color: #fff;
 }
 
+.btn-empty-default{
+  border-color: map-get($global-color, a);
+  color: map-get($global-color, e);
+}
+
+.btn-empty-black {
+  border-color: map-get($global-color, b);
+  color: map-get($global-color,b);
+}
+
 .input-group {
   position: relative;
   margin-bottom: 10px;

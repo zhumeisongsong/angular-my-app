@@ -82,8 +82,7 @@
     }
     .text-total {
       @include flex-box(row, flex-end, baseline);
-      padding-top: 10px;
-      line-height: 1.4;
+      padding: 10px 0 10px 0;
       .price {
         padding-left: map-get($global-space, b);
         span {
