@@ -17,7 +17,7 @@ import {CartRoutingModule} from './cart-routing.module';
   ],
   exports: [
     CartComponent,
-  ],//特性模块可以对其他模块暴露或隐藏自己的实现
+  ],
   providers: []
 })
 

@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import{HttpClient} from '@angular/common/http';
 
-import 'rxjs/add/operator/toPromise';//Angular 的Observable并没有一个toPromise操作符
+import 'rxjs/add/operator/toPromise';//Angular Observable object has no toPromise operator
 
 import {Product} from './product';
 
-@Injectable()//必须写括号
+@Injectable()
+
 export class ProductService {
 
   private header = new Headers({
