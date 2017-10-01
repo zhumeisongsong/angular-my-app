@@ -11,6 +11,104 @@
   background-color: map-get($global-color, k);
 }
 
+/*button*/
+footer.control-btn {
+  @include flex-box(row, flex-end, center);
+  width: 100%;
+  padding: map-get($global-space, b);
+  button {
+    width: 80px;
+    min-width: auto;
+    border-radius: 6px;
+    font-size: map-get($global-font-size, normal);
+    + button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.text-price {
+  width: 50%;
+  padding-right: 10px;
+  color: map-get($global-color, a);
+  font-weight: 400;
+  span {
+    font-size: map-get($global-font-size, h2);
+  }
+}
+
+
+.pd-list {
+  width: 100%;
+  background-color: #fff;
+  li:nth-last-child(1) {
+    margin-bottom: 0 !important;
+  }
+}
+
+ul {
+  li {
+    @include flex-box(row, flex-end, center);
+    margin-bottom: 3px;
+    padding: map-get($global-space, b);
+    background-color: map-get($global-color, l);
+  }
+  .image-con {
+    position: relative;
+    padding-top: 22%;
+    overflow: hidden;
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+  .text-con {
+    @include flex-box(row, center, space-between);
+    padding-left: map-get($global-space, b);
+    .text-sub {
+      margin-bottom: 10px;
+    }
+    .text-number {
+      width: 50%;
+      text-align: right;
+    }
+  }
+}
+
+footer {
+  padding: 0 map-get($global-space, b);
+  div {
+    @include flex-box(row, space-between, center);
+    height: 40px;
+  }
+  .deliver-price {
+    padding-left: 5px;
+  }
+  .input {
+    width: 80%;
+  }
+  .text-total {
+    @include flex-box(row, flex-end, baseline);
+    padding: 10px 0 10px 0;
+    .price {
+      padding-left: map-get($global-space, b);
+      span {
+        color: map-get($global-color, a);
+      }
+    }
+  }
+}
+
+.order-con {
+  margin-bottom: 10px;
+  background-color: #fff;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .order-list {
   .order-item {
     margin-bottom: 10px;
@@ -22,14 +120,6 @@
     padding: 0 map-get($global-space, b);
     @include flex-box(row, space-between, center);
     background-color: #fff;
-  }
-}
-
-.pd-list {
-  width: 100%;
-  background-color: #fff;
-  li:nth-last-child(1) {
-    margin-bottom: 0 !important;
   }
 }
 
@@ -53,20 +143,5 @@
     height: 30px;
     padding: map-get($global-space, b);
     line-height: 30px;
-  }
-}
-
-.control-btn {
-  @include flex-box(row, flex-end, center);
-  width: 100%;
-  padding: map-get($global-space, b);
-  button {
-    width: 80px;
-    min-width: auto;
-    border-radius: 6px;
-    font-size: map-get($global-font-size, normal);
-    + button {
-      margin-left: 10px;
-    }
   }
 }

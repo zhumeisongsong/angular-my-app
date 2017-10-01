@@ -1,56 +1,24 @@
-<div>
-  <!--*ngFor="let order of orders" [routerLink]="['order/', order.id]"-->
-  <section class="order-con">
-    <header>
-      <p class="col-xs-7 text-store">
-        <img src="../../assets/image/icon/store.svg" alt="store" class="icon-store">
-        <span>Flower Plus</span>
-      </p>
-      <p class="col-xs-5 text-status">待收货</p>
-    </header>
+<!--*ngFor="let order of orders" [routerLink]="['order/', order.id]"-->
+<section class="order-con">
 
-    <ul class="pd-list">
-      <li>
-        <div class="col-xs-4 image-con">
-          <img src="../../assets/image/order-image.jpg" alt="cover">
-        </div>
-        <div class="col-xs-8 text-con">
-          <p class="text-title line-ellipsis">商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题</p>
-          <p class="text-sub">参数等：</p>
-          <p class="text-price">¥<span>122</span>.00</p>
-          <p class="text-number">x1</p>
-        </div>
-      </li>
-      <li>
-        <div class="col-xs-4 image-con">
-          <img src="../../assets/image/order-image.jpg" alt="cover">
-        </div>
-        <div class="col-xs-8 text-con">
-          <p class="text-title line-ellipsis">商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题</p>
-          <p class="text-sub">参数等：</p>
-          <p class="text-price">¥<span>122</span>.00</p>
-          <p class="text-number">x1</p>
-        </div>
-      </li>
-    </ul>
+  <order-pd></order-pd>
 
-    <footer class="ui-border-b">
-      <div class="text-total">
-        <p>共1{{number}}件商品</p>
-        <p class="price">小计：<span class="text-price">¥<span>126</span>.00</span>(免运费)</p>
-      </div>
-    </footer>
-
-    <div class="control-btn">
-      <button type="button" class="btn btn-empty-black">取消订单</button>
-      <button type="button" class="btn btn-empty-black">订单详情</button>
-      <button type="button" class="btn btn-empty-default">去付款</button>
-      <!--待付款 去付款 取消-->
-      <!--待收货 确认收货 -->
-      <!--订单详情-->
+  <section class="ui-border-b">
+    <div class="text-total">
+      <p>共{{number}}件商品</p>
+      <p class="price">小计：<span class="text-price">¥<span>126</span>.00</span>(免运费)</p>
     </div>
   </section>
 
-</div>
+  <footer class="control-btn">
+    <button type="button" class="btn btn-empty-black">取消订单</button>
+    <button type="button" class="btn btn-empty-black">订单详情</button>
+    <button type="button" class="btn btn-empty-default">去付款</button>
+    <!--待付款 去付款 取消-->
+    <!--待收货 确认收货 -->
+    <!--已完成 订单详情-->
+  </footer>
+
+</section>
 
 
