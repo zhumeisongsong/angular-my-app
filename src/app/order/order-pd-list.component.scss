@@ -2,6 +2,10 @@
 @import "../../assets/stylesheet/mixin";
 @import "../../assets/stylesheet/extend";
 
+.shop-con{
+  background-color: #fff;
+}
+
 header {
   @include flex-box(row, flex-start, center);
   height: 40px;
@@ -53,6 +57,15 @@ header {
     .text-number {
       width: 50%;
       text-align: right;
+    }
+    .text-price {
+      width: 50%;
+      padding-right: 10px;
+      color: map-get($global-color, a);
+      font-weight: 400;
+      span {
+        font-size: map-get($global-font-size, h2);
+      }
     }
   }
 }

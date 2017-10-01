@@ -12,7 +12,6 @@
   @include flex-box(row, space-between, center);
   width: 100%;
   padding: 15px 36px 15px 36px;
-  margin-bottom: 10px;
   border-bottom: 3px solid map-get($global-color, h);
   background-color: #fff;
   .user-address {
@@ -40,6 +39,7 @@
 
 .order-info {
   padding: 0 map-get($global-space, b);
+  background-color: #fff;
   div {
     @include flex-box(row, space-between, center);
     height: 40px;

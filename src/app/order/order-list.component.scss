@@ -1,17 +1,6 @@
 @import "../../assets/stylesheet/variable";
 @import "../../assets/stylesheet/mixin";
 
-.text-total {
-  @include flex-box(row, flex-end, baseline);
-  padding: 10px 0 10px 0;
-  .price {
-    padding-left: map-get($global-space, b);
-    span {
-      color: map-get($global-color, a);
-    }
-  }
-}
-
 .container {
   position: absolute;
   left: 0;
@@ -22,11 +11,27 @@
   background-color: map-get($global-color, k);
 }
 
+.order-con{
+  background-color: #fff;
+}
+
+.order-info {
+  @include flex-box(row, flex-end, baseline);
+  padding: 10px  map-get($global-space, b);
+  .price {
+    padding-left: map-get($global-space, b);
+    span {
+      color: map-get($global-color, a);
+    }
+  }
+}
+
 /*button*/
-footer.control-btn {
+.control-btn {
   @include flex-box(row, flex-end, center);
   width: 100%;
   padding: map-get($global-space, b);
+  background-color: #fff;
   button {
     width: 80px;
     min-width: auto;
@@ -35,60 +40,5 @@ footer.control-btn {
     + button {
       margin-left: 10px;
     }
-  }
-}
-
-.text-price {
-  width: 50%;
-  padding-right: 10px;
-  color: map-get($global-color, a);
-  font-weight: 400;
-  span {
-    font-size: map-get($global-font-size, h2);
-  }
-}
-
-.order-con {
-  margin-bottom: 10px;
-  background-color: #fff;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.order-list {
-  .order-item {
-    margin-bottom: 10px;
-  }
-
-  .list-header {
-    width: 100%;
-    height: 40px;
-    padding: 0 map-get($global-space, b);
-    @include flex-box(row, space-between, center);
-    background-color: #fff;
-  }
-}
-
-.pd-item {
-  padding: map-get($global-space, b);
-  margin-bottom: 5px;
-  background-color: map-get($global-color, j);
-  @include flex-box (row, flex-start, flex-start);
-  img {
-    width: 25%;
-  }
-  .text-con {
-    width: 75%;
-    padding-left: map-get($global-space, b);
-    .title {
-      line-height: 1.2;
-    }
-  }
-  .total {
-    width: 100%;
-    height: 30px;
-    padding: map-get($global-space, b);
-    line-height: 30px;
   }
 }
