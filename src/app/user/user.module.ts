@@ -30,9 +30,7 @@ import {UserRoutingModule} from "./user-routing.module";
     AddressDetailComponent,
     SignInComponent
   ],
-  exports: [
-
-  ],
+  exports: [],
   providers: [
     UserService,
     AddressService

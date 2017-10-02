@@ -1,0 +1,32 @@
+@import "../../assets/stylesheet/variable";
+@import "../../assets/stylesheet/mixin";
+@import "../../assets/stylesheet/extend";
+
+.address-con {
+  @include flex-box(row, space-between, center);
+  width: 100%;
+  padding: 15px 36px 15px 36px;
+  border-bottom: 3px solid map-get($global-color, h);
+  background-color: #fff;
+  .user-address {
+    width: 100%;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+}
+
+.icon-address {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: url("../../assets/image/icon/address-dark.svg") center no-repeat;
+    background-size: 100%;
+    z-index: map-get($global-z-index,b)+10;
+  }
+}

@@ -7,14 +7,14 @@ import {OrderComponent} from './order.component';
 import {OrderConfirmComponent} from './order-confirm.component';
 import {OrderTabComponent} from './order-tab.component';
 import {OrderListComponent} from './order-list.component';
-
+import {AddressDefaultComponent} from "../user/address-default.component";
+import {OrderPdListComponent} from "./order-pd-list.component";
 import {OrderDetailComponent} from './order-detail.component';
 
 import {OrderService} from'./order.service';
 import {OrderTabService} from './order-tab.service';
 
 import {OrderRoutingModule} from './order-routing.module';
-import {OrderPdListComponent} from "./order-pd-list.component";
 
 @NgModule({
   imports: [
@@ -30,6 +30,7 @@ import {OrderPdListComponent} from "./order-pd-list.component";
     OrderPdListComponent,
     OrderDetailComponent,
 
+    AddressDefaultComponent,
     OrderConfirmComponent,
   ],
   exports: [],//特性模块可以对其他模块暴露或隐藏自己的实现
