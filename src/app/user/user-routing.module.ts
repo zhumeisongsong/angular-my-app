@@ -4,7 +4,6 @@ import {RouterModule} from "@angular/router";
 import {UserComponent} from "./user.component";
 import {UserCenterComponent} from "./user-center.component";
 
-import {SignInComponent} from "./sign-in.component";
 
 import {AddressListComponent} from "./address-list.component";
 import {AddressDetailComponent} from "./address-detail.component";
@@ -16,10 +15,6 @@ import {AddressDetailComponent} from "./address-detail.component";
         path: '',
         component: UserComponent,
         children: [
-          {
-            path: 'login',
-            component: SignInComponent
-          },
           {
             path:'address',
             component:AddressListComponent,

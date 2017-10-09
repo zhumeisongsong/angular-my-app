@@ -1,8 +1,8 @@
-@import "../../assets/stylesheet/variable";
+@import "../assets/stylesheet/variable";
 
 .form {
   width: 100%;
-  padding: map-get($global-space,b)*2 map-get($global-space, b);
+  padding: map-get($global-space,b)*2 map-get($global-space, b) 0;
 }
 
 .input-group {
@@ -28,9 +28,9 @@
 }
 
 .input-phone {
-  padding-right: 96px;
+  padding-right: 110px;
   &::before {
-    background-image: url("../../assets/image/icon/phone.svg");
+    background-image: url("../assets/image/icon/phone.svg");
   }
   .btn-code {
     position: absolute;
@@ -43,11 +43,12 @@
 
 .input-code {
   &::before {
-    background-image: url("../../assets/image/icon/code.svg");
+    background-image: url("../assets/image/icon/code.svg");
   }
 }
 
 .btn-gray {
+  width: 100%;
   height: 40px;
   background-color: map-get($global-color, b);
   color: #fff;

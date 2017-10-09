@@ -19,16 +19,14 @@ import {CustomMaterialModule} from './custom-material.module';
 // App root
 import {AppComponent} from './app.component';
 import {PageNotFoundComponent} from './page-not-found.component';
-
-import {HeroListComponent} from './reactive-forms/hero-list.component';
-import {HeroDetailComponent} from './reactive-forms/hero-detail.component';
-import {HeroService} from './reactive-forms/hero.service';
+import {LoginComponent} from './login.component';
 
 // Feature modules async
 import {ProductModule} from './product/product.module';
 import {CartModule} from './cart/cart.module';
 import {OrderModule} from './order/order.module';
 import {UserModule} from './user/user.module';
+import {LoginRoutingModule} from "./login-routing.module";
 
 @NgModule({
   imports: [
@@ -43,20 +41,18 @@ import {UserModule} from './user/user.module';
     CartModule,
     OrderModule,
     UserModule,
+    LoginRoutingModule,
 
     HttpClientModule,
   ],
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-
-    HeroListComponent,
-    HeroDetailComponent,
+    LoginComponent
   ],
   exports: [
   ],
   providers: [
-    HeroService
   ], //global service
   bootstrap: [AppComponent]
 })
