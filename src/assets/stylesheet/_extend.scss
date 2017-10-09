@@ -1,0 +1,27 @@
+%nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1024px;
+  height: 48px;
+  background-color: #fff;
+}
+
+%nav-btn{
+  width: 35%;
+  height: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  @include flex-box(row, center, center);
+  float: left;
+  cursor: pointer;
+}
+
+%pd-text-con{
+  padding: map-get($global-space,b)*2 map-get($global-space, b);
+  background-color: #fff;
+}
+
+

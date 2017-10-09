@@ -1,9 +1,10 @@
 @import "../../assets/stylesheet/variable";
 @import "../../assets/stylesheet/mixin";
 
-.user {
-  width: 100%;
+.container {
   height: 100%;
+  padding-bottom: 48px;
+  background-color: map-get($global-color, l);
 }
 
 .user-header {
@@ -12,28 +13,52 @@
   height: 30vh;
   background: url("../../assets/image/user-bg.jpg") center no-repeat;
   background-size: cover;
-  .wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: map-get($global-color, h);
-    &.flex-box {
-      @include flex-box(column, center, center);
-    }
-    .user-photo {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      overflow: hidden;
-      background-color: #fff;
-    }
-    .user-name {
-      margin-top: 10px;
-      color: #fff;
+  @include flex-box(column, center, center);
+  .user-photo {
+    width: 66px;
+    height: 66px;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .user-name {
+    margin-top: 20px;
+    color: #fff;
+  }
+
+}
+
+.user-order {
+  display: flex;
+  padding-top: map-get($global-space,b)*2;
+  padding-bottom: map-get($global-space,b)*2;
+  text-align: center;
+  background-color: #fff;
+  .image-con {
+    width: 66px;
+    height: 66px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: map-get($global-color, k);
+    margin-bottom: 10px;
+    img {
+      width: 100%;
+      padding: 15px;
     }
   }
 }
 
-.user-order {
-
+.normal-list {
+  margin-top: 20px;
+  background-color: #fff;
+  li {
+    @include flex-box(row, flex-start, center);
+    height: 48px;
+    padding: 0 map-get($global-space, b);
+  }
+  img {
+    width: 34px;
+    padding-right: 10px;
+  }
 }

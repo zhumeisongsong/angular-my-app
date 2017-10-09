@@ -1,0 +1,22 @@
+<!--*ngFor="let order of orders" [routerLink]="['order/', order.id]"-->
+<section class="order-con">
+
+  <order-pd></order-pd>
+
+  <div class="order-info ui-border-b">
+    <p>共{{number}}2件商品</p>
+    <p class="price">小计：<span class="text-price">¥<span>126</span>.00</span>(免运费)</p>
+  </div>
+
+  <footer class="control-btn">
+    <button type="button" class="btn btn-empty-black">取消订单</button>
+    <button type="button" class="btn btn-empty-black">订单详情</button>
+    <button type="button" class="btn btn-empty-default">去付款</button>
+    <!--待付款 去付款 取消-->
+    <!--待收货 确认收货 -->
+    <!--已完成 订单详情-->
+  </footer>
+
+</section>
+
+

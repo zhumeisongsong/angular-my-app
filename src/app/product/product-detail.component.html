@@ -1,0 +1,46 @@
+<div *ngIf="product" class="container">
+  <div class="swiper-con">
+    <img src="{{product.coverUrl}}" alt="cover">
+  </div>
+
+  <div class="text-con">
+    <h2 class="text-title line-ellipsis">{{product.name}}</h2>
+    <p class="text-sub">{{product.detailIntro}}</p>
+    <p class="text-price"><span class="price">¥{{product.price}}</span><span class="original-price">原价：¥{{product.originalPrice}}</span>
+    </p>
+  </div>
+
+  <div class="text-deliver ui-border-t">
+    <span class="deliver-price">运费：免运费</span>
+    <span class="user-purchase">已经有{{product.userPurchase}}人购买</span>
+  </div>
+
+  <div class="detail-con">
+    <header class="ui-border-t"></header>
+    <div class="rich-text">{{product.richText}}</div>
+  </div>
+
+  <!--<div class="store-con arrow-right">-->
+  <!--<span>{{product.storeName}}</span>-->
+  <!--<span>进入店铺</span>-->
+  <!--</div>-->
+
+  <nav class="nav-bar ui-border-t">
+    <a class="icon-con ui-border-r" routerLink="/product">
+      <img src="./assets/image/icon/home.svg" alt="home">
+      <p>首页</p>
+    </a>
+    <a class="icon-con" routerLink="/cart">
+      <div class="image-con">
+        <img src="./assets/image/icon/cart.svg" alt="cart">
+      </div>
+      <p>购物车</p>
+    </a>
+    <!--TODO：Here is the emitter (click)="Popup(false)"-->
+    <button class="btn-item btn-default" (click)="addToCart()">加入购物车</button>
+    <button class="btn-item btn-black">立即购买</button>
+  </nav>
+</div>
+
+<!--<pop-up [class.hidden]="isHidden" (onHidden)="onHidden($event)"></pop-up>-->
+

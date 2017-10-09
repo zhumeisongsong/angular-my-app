@@ -1,0 +1,44 @@
+@import "../../assets/stylesheet/variable";
+@import "../../assets/stylesheet/mixin";
+
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding-top: 49px;
+  z-index: map-get($global-z-index,b)-20;
+  background-color: map-get($global-color, k);
+}
+
+.order-con{
+  background-color: #fff;
+}
+
+.order-info {
+  @include flex-box(row, flex-end, baseline);
+  padding: 10px  map-get($global-space, b);
+  .price {
+    padding-left: map-get($global-space, b);
+    span {
+      color: map-get($global-color, a);
+    }
+  }
+}
+
+/*button*/
+.control-btn {
+  @include flex-box(row, flex-end, center);
+  width: 100%;
+  padding: map-get($global-space, b);
+  background-color: #fff;
+  button {
+    width: 80px;
+    min-width: auto;
+    border-radius: 6px;
+    font-size: map-get($global-font-size, normal);
+    + button {
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,35 +1,59 @@
-import {NgModule}               from '@angular/core';
-import {BrowserModule}          from '@angular/platform-browser';
-import {FormsModule}            from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {ReactiveFormsModule} from  '@angular/forms';
 
-//引用组件
-import {AppComponent}         from './app.component';
-import {ProductListComponent}        from './pruduct/product-list.component';
-import {ProductDetailComponent}  from './pruduct/product-detail.component';
+import {HttpClientModule} from '@angular/common/http';
 
-import {CartComponent}        from './order/cart.component';
-import {UserCenterComponent}  from './user/user-center.component';
+// Routing module
+import {AppRoutingModule} from './app-routing.module';
 
-import {ProductService}          from './pruduct/product.service';
+// Imports for loading & configuring the in-memory web api
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService}  from './in-memory-data.service';
 
-import {AppRoutingModule}     from './app-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+//angular material module
+import {CustomMaterialModule} from './custom-material.module';
+
+// App root
+import {AppComponent} from './app.component';
+import {PageNotFoundComponent} from './page-not-found.component';
+import {LoginComponent} from './login.component';
+
+// Feature modules async
+import {ProductModule} from './product/product.module';
+import {CartModule} from './cart/cart.module';
+import {OrderModule} from './order/order.module';
+import {UserModule} from './user/user.module';
+import {LoginRoutingModule} from "./login-routing.module";
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    CustomMaterialModule,
+    AppRoutingModule,
+
+    ProductModule,
+    CartModule,
+    OrderModule,
+    UserModule,
+    LoginRoutingModule,
+
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,
-    ProductListComponent,
-    ProductDetailComponent,
-    CartComponent,
-    UserCenterComponent
+    PageNotFoundComponent,
+    LoginComponent
+  ],
+  exports: [
   ],
   providers: [
-    ProductService
-  ],
+  ], //global service
   bootstrap: [AppComponent]
 })
 

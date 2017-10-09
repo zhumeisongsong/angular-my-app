@@ -1,44 +1,40 @@
-import {NgModule}             from '@angular/core';
+import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {ProductListComponent}        from './pruduct/product-list.component';
-import {ProductDetailComponent}  from './pruduct/product-detail.component';
+// import {PageNotFoundComponent} from "./page-not-found.component";
 
-import {CartComponent}        from './order/cart.component';
+// import { AuthGuard }                from './auth-guard.service';
 
-import {UserCenterComponent}        from './user/user-center.component';
-
-const routes: Routes = [
-  {
-    path: 'list',
-    component: ProductListComponent
-  },
-  {
-    path: '',
-    redirectTo: '/list',
-    pathMatch: 'full'
-  },
-  {
-    path: 'detail/:id',
-    component: ProductDetailComponent
-  },
+export const routes: Routes = [
   {
     path: 'cart',
-    component: CartComponent
+    loadChildren: 'app/cart/cart.module#CartModule',
   },
   {
     path: 'user',
-    component: UserCenterComponent
-  }
+    loadChildren: 'app/user/user.module#UserModule',
+    // canLoad: [AuthGuard]
+  },
+  {
+    path: 'order',
+    loadChildren: 'app/order/order.module#OrderModule',
+    // canLoad: [AuthGuard]
+  },
+  {
+    path: '',
+    redirectTo: '/product',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(
+      routes,
+      // {enableTracing: true}
+    )//only used in root routing
   ],
-  exports: [
-    RouterModule
-  ]
+  exports: [RouterModule]
 })
 
 export class AppRoutingModule {

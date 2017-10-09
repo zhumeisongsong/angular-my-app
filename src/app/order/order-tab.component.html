@@ -1,0 +1,11 @@
+<div class="container">
+  <nav class="tab-nav">
+    <a *ngFor="let nav of navs" (click)="onSelect(state)" [class.selected]="state===selectedState">{{nav.title}}</a>
+  </nav>
+
+  <section class="tab-con">
+    <order-list *ngIf="selectedState"></order-list>
+  </section>
+</div>
+
+

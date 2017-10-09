@@ -1,0 +1,40 @@
+@import "../../assets/stylesheet/variable";
+@import "../../assets/stylesheet/mixin";
+
+.container {
+  height: 100%;
+  padding-bottom: 49px;
+  background-color:map-get($global-color,l);
+}
+
+.cart-empty{
+  width: 100%;
+  height: 100%;
+  @include flex-box(column,center,center);
+}
+
+.image-con {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.title{
+  margin-bottom: 10px;
+  color:map-get($global-color,b);
+}
+
+.info{
+  margin-bottom: 40px;
+  color: #999;
+}
+
+.btn{
+  width: 120px;
+  margin-bottom: 100px;
+  border-color: map-get($global-color,f);
+}
+

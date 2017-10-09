@@ -7,9 +7,13 @@ html {
 body {
   position: relative;
   width: 100%;
+  max-width: 1024px;
   height: 100%;
+  margin: 0 auto;
   -webkit-font-smoothing: antialiased;
-  font-size: map-get($global-font-size, nomal);
+  font-size: map-get($global-font-size, normal);
+  font-weight: 400;
+  color: map-get($global-color, b);
 }
 
 a {
@@ -30,23 +34,125 @@ h2 {
   font-weight: normal;
 }
 
+i {
+  font-style: normal;
+}
+
+.hidden{
+  display: none!important;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
 .text-sub {
   font-size: 12px;
   color: map_get($global-color, g);
 }
 
-.align-right {
-  text-align: right;
-}
-
-.button {
-  display: inline-block;
-  width: 100%;
-  max-width: 120px;
-  padding: 5px 0;
+.btn {
+  min-width: 100px;
+  height: 30px;
+  padding: 0 10px;
   border: 1px solid map_get($global-color, b);
   border-radius: 3px;
   background-color: #fff;
   font-size: 12px;
-  text-align: center;
+  cursor: pointer;
+}
+
+.btn-default {
+  background-color: map-get($global-color, a);
+  font-size: 14px;
+  color: #fff;
+}
+
+.btn-black{
+  background-color: map-get($global-color, c);
+  font-size: 14px;
+  color: #fff;
+}
+
+.btn-empty-default{
+  border-color: map-get($global-color, a);
+  color: map-get($global-color, e);
+}
+
+.btn-empty-black {
+  border-color: map-get($global-color, b);
+  color: map-get($global-color,b);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.input {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  &::placeholder {
+    color: map-get($global-color, g);
+  }
+  &::-webkit-input-placeholder {
+    color: map-get($global-color, g);
+  }
+  &:-ms-input-placeholder {
+    color: map-get($global-color, g);
+  }
+  &::-ms-input-placeholder {
+    color: map-get($global-color, g);
+  }
+}
+
+.line-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.text-con {
+  width: 100%;
+  .text-title {
+    width: 100%;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .text-sub {
+    width: 100%;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .text-price {
+    width: 100%;
+  }
+}
+
+.arrow-right {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: map-get($global-space, b);
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: url("../../assets/image/icon/arrow-right.svg") center no-repeat;
+    background-size: contain;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-bar {
+    left: 50%!important;
+    margin-left: -512px;
+  }
 }

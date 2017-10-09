@@ -1,0 +1,8 @@
+{
+  "/index.php": {
+    "target":"http://120.24.19.157:8080/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../assets/stylesheet/variable";
+@import "../../assets/stylesheet/mixin";
+@import "../../assets/stylesheet/extend";
+
+.container {
+  height: 100%;
+  background-color: map-get($global-color, l);
+  z-index: map-get($global-z-index, b);
+}
+
+.order-info {
+  padding: 0 map-get($global-space, b);
+  background-color: #fff;
+  div {
+    @include flex-box(row, space-between, center);
+    height: 40px;
+  }
+  .deliver-price {
+    padding-left: 5px;
+  }
+  .input {
+    width: 80%;
+  }
+}
+
+.nav-bar {
+  @extend %nav-bar;
+  @include flex-box(row, flex-end, center);
+  p {
+    padding-right: map-get($global-space, b);
+  }
+}
