@@ -16,12 +16,12 @@ const orderRoutes: Routes = [
         component: OrderConfirmComponent
       },
       {
-        path: ':id',
-        component: OrderDetailComponent
-      },
-      {
         path: '',
         component: OrderTabComponent,
+      },
+      {
+        path: ':id',
+        component: OrderDetailComponent
       },
     ]
   },

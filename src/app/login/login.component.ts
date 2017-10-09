@@ -10,20 +10,5 @@ import {AuthService} from './auth.service';
 })
 
 export class LoginComponent {
-  clickMessage = '';
-  values = '';
 
-  constructor(public authService,
-              public router: Router) {
-
-  }
-  //
-  // onClickMe() {
-  //   this.clickMessage = 'You are success';
-  // };
-  //
-  //
-  // onKey(value: string) { // with type info
-  //   this.values += value + ' | ';
-  // }
 }
