@@ -1,4 +1,3 @@
-//特性模块提供内聚的功能聚合
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';

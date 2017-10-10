@@ -1,16 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-// import {LoginComponent} from './login/login.component';
 import {PageNotFoundComponent} from './page-not-found.component';
-
-import {AuthGuard}                from './login/auth-guard.service';
+import {AuthGuard} from './login/auth-guard.service';
 
 export const routes: Routes = [
-  // {
-  //   path: 'login',
-  //   component: LoginComponent
-  // },
   {
     path: 'product',
     loadChildren: 'app/product/product.module#ProductModule',

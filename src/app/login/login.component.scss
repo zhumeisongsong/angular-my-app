@@ -3,6 +3,9 @@
 .form {
   width: 100%;
   padding: map-get($global-space,b)*2 map-get($global-space, b) 0;
+  &:last-child{
+    padding-top: 0;
+  }
 }
 
 .input-group {

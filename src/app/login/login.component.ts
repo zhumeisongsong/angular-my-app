@@ -12,37 +12,51 @@ import {User} from '../user/user';
 export class LoginComponent implements OnInit {
   sendBtn: any = '获取验证码';
   codeBtnDisabled = true;
+  message: string;
+
+  constructor(public authService: AuthService,
+              public router: Router) {
+    this.setMessage();
+  }
+
+  setMessage() {
+    this.message = '登录中...'
+  }
 
   ngOnInit() {
+    // let token = localStorage.getItem('token');
+
     this.sendBtn = '获取验证码';
     this.codeBtnDisabled = true;
   }
 
   model = {
-    id: null,
     mobile: null,
     code: null,
     addTime: null,
-    token: null,
-    addressDefault: null,
     regTime: null,
   };
 
-  sendCode(value: string) {
-    console.log(value);
-
-    setInterval(() => {
-      let time = 60;
-      this.sendBtn = time--;
-    }, 1000);
+  mobileSubmit(mobile: any) {
+    console.log(mobile);
   }
 
-  countDown(second: number) {
+  loginSubmit(mobile: any, code: any) {
+    this.setMessage();
 
-  }
+    this.authService.isLoggedIn = true;
+    if (this.authService.isLoggedIn) {
+      console.log(this.authService)
+      let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/user';
 
-  checkMobile(value: number) {
-    console.log(value)
+      let navigationExtras: NavigationExtras = {
+        queryParamsHandling: 'preserve',
+        preserveFragment: true
+      };
+
+      this.router.navigate([redirect], navigationExtras);
+    }
+    //传回 后台新建或更新 再传回token
   }
 
 }

@@ -11,7 +11,7 @@ import {OrderService} from './order.service';
   styleUrls: ['./order-tab.component.scss']
 })
 
-export class OrderTabComponent implements AfterContentInit {
+export class OrderTabComponent implements OnInit, AfterContentInit {
   navs: OrderTab[] = [];
 
   constructor(private navService: OrderTabService,) {
@@ -21,12 +21,16 @@ export class OrderTabComponent implements AfterContentInit {
   //   return orderNav.text === this.selectedStatus;
   // }
 
-  ngAfterContentInit() {
+  ngOnInit() {
     this.navService.getOrderTab()
       .then(navs => {
         this.navs = navs;
         console.log(navs)
       });
+  }
+
+  ngAfterContentInit() {
+
   }
 
 
