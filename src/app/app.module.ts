@@ -16,7 +16,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import {PageNotFoundComponent} from './page-not-found.component';
 import {LoginComponent} from './login/login.component';
-
 // Feature modules async
 import {ProductModule} from './product/product.module';
 import {CartModule} from './cart/cart.module';

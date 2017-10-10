@@ -1,9 +1,13 @@
 export class User {
-  id:number;
-  mobile:string;
-  code:number;
-  addTime:string;
-  token:string;
-  addressDefault:number;
-  regTime:number;
+
+  constructor(public id: string,
+              public mobile: string,
+              public code: number,
+              public addTime: string,
+              public regTime: number,
+              public token?: string,
+              public addressDefault?: number,) {
+  }
+
 }
+

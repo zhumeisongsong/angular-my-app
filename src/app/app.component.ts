@@ -13,6 +13,7 @@ export class AppComponent {
       "cart": "",
       "user": ""
     };
+
     let pathname = window.location.href.match(".+/(.+?)([\?#;].*)?$")[1];
     return (pathname in routeObj);
   }
