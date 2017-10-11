@@ -1,5 +1,6 @@
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
+
   createDb() {
     const products = [
       {
@@ -36,7 +37,12 @@ export class InMemoryDataService implements InMemoryDbService {
         richText: "333商品介绍详情",
       }
     ];
-    return {products}
+
+    const orders = [];
+
+    const orderPd = [];
+
+    return {products, orders, orderPd};
   }
 
 }

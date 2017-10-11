@@ -25,7 +25,6 @@ export class ProductDetailComponent implements OnInit {
     this.route.paramMap
       .switchMap((params: ParamMap) => this.productService.getProduct(+params.get('id')))
       .subscribe(product => {
-        console.log(product);
         this.product = product
       });
   }
@@ -42,10 +41,11 @@ export class ProductDetailComponent implements OnInit {
   // }
 
   addToCart() {
-    this.router.navigate(['/cart']);
+    console.log(this.product)
   }
 
   buyNow() {
+    console.log(this.product)
     this.router.navigate(['/order', 'confirm'])
   }
 }
