@@ -1,16 +1,15 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {ReactiveFormsModule,FormsModule} from  '@angular/forms';
+import {ReactiveFormsModule, FormsModule} from  '@angular/forms';
+// import {HttpClientModule} from '@angular/common/http';
 
-import {HttpClientModule} from '@angular/common/http';
+import{HttpModule} from '@angular/http';
 
 import {AppRoutingModule} from './app-routing.module';
 
 // Imports for loading & configuring the in-memory web api
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService}  from './in-memory-data.service';
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {InMemoryDataService}  from './api/in-memory-data.service';
 
 // App root
 import {AppComponent} from './app.component';
@@ -28,7 +27,8 @@ import {LoginRoutingModule} from "./login/login-routing.module";
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,
+    HttpModule,
+
     InMemoryWebApiModule.forRoot(InMemoryDataService),
 
     LoginRoutingModule,
@@ -38,8 +38,6 @@ import {LoginRoutingModule} from "./login/login-routing.module";
     CartModule,
     OrderModule,
     UserModule,
-
-    HttpClientModule,
   ],
   declarations: [
     AppComponent,

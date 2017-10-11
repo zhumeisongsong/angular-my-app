@@ -26,7 +26,9 @@ import {UserRoutingModule} from "./user-routing.module";
     AddressListComponent,
     AddressDetailComponent
   ],
-  exports: [],
+  exports: [
+    UserCenterComponent,
+  ],
   providers: [
     UserService,
     AddressService

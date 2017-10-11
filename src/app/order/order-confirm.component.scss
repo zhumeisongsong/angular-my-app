@@ -2,6 +2,15 @@
 @import "../../assets/stylesheet/mixin";
 @import "../../assets/stylesheet/extend";
 
+.text-price {
+  width: 50%;
+  color: map-get($global-color, a);
+  font-weight: 400;
+  span {
+    font-size: map-get($global-font-size, h2);
+  }
+}
+
 .container {
   height: 100%;
   background-color: map-get($global-color, l);
@@ -28,5 +37,10 @@
   @include flex-box(row, flex-end, center);
   p {
     padding-right: map-get($global-space, b);
+  }
+  .btn-default{
+    border:0;
+    border-radius: 0;
+    height: 100%;
   }
 }

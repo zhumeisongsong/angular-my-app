@@ -1,20 +1,15 @@
 import {Order} from './order';
 
 export const ORDERS = [
-  {
-    id: 1,
-    status: 'purchase',
-    uId:[11,12],
-    pdList:[{
-      test:'test'
-    }]
-  },
-  {
-    id: 2,
-    status: 'purchase',
-    uId:[11,12],
-    pdList:[{
-      test:'test22222'
-    }]
-  },
+  // {
+  //   orderId: 1,
+  //   userId:1,
+  //   orderState: 1,
+  //   totalPrice:150.00,
+  //   userNote:'不要香菜',
+  //
+  //   consignee:'smm',
+  //   province:2
+  // },
+
 ];

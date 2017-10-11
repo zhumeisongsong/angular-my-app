@@ -28,7 +28,7 @@ export class UserCenterComponent implements OnInit {
   }
 
   orderList(state: string) {
-    console.log(state)
+    localStorage.setItem('orderState',state);
     this.router.navigate(['/order'])
   }
 
