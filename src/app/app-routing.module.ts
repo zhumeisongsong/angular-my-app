@@ -9,10 +9,10 @@ export const routes: Routes = [
     path: 'product',
     loadChildren: 'app/product/product.module#ProductModule',
   },
-  {
-    path: 'cart',
-    loadChildren: 'app/cart/cart.module#CartModule',
-  },
+  // {
+  //   path: 'cart',
+  //   loadChildren: 'app/cart/cart.module#CartModule',
+  // },
   {
     path: 'user',
     loadChildren: 'app/user/user.module#UserModule',

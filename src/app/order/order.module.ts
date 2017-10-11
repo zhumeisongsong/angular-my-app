@@ -6,7 +6,7 @@ import {OrderComponent} from './order.component';
 import {OrderConfirmComponent} from './order-confirm.component';
 import {OrderTabComponent} from './order-tab.component';
 import {OrderListComponent} from './order-list.component';
-import {AddressDefaultComponent} from "../user/address-default.component";
+import {AddressDefaultComponent} from "../user/address/address-default.component";
 import {OrderPdListComponent} from "./order-pd-list.component";
 import {OrderDetailComponent} from './order-detail.component';
 

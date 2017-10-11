@@ -1,5 +1,6 @@
 <div class="container">
-  <address-default></address-default>
+  <address-default *ngIf="hasDefaultAddress"></address-default>
+  <div class="address-empty" *ngIf="!hasDefaultAddress"></div>
 
   <order-pd></order-pd>
 
