@@ -8,7 +8,7 @@ import {Order} from './order';
 @Component({
   selector: 'order-confirm',
   templateUrl: './order-confirm.component.html',
-  styleUrls: ['./order-pd-list.component.scss', './order-confirm.component.scss',]
+  styleUrls: ['./order-confirm.component.scss',]
 })
 
 export class OrderConfirmComponent implements OnInit {
@@ -16,11 +16,17 @@ export class OrderConfirmComponent implements OnInit {
   stateFlag: boolean;
   idList: any;
 
-  orderData: Order;
-
-  order: any = {
-    count: "",
-    price:""
+  order: Order = {
+    userId: 0,
+    orderState: 0,
+    totalPrice: 0,
+    totalCount: 10,
+    consignee: "smm",
+    province: 22,
+    city: 33,
+    district: 18,
+    address: "333333",
+    mobile: "18108272714",
   };
 
   constructor(private orderService: OrderService,
@@ -31,8 +37,8 @@ export class OrderConfirmComponent implements OnInit {
     this.idList = localStorage.getItem('productId');
 
     if (this.idList) {
-      this.renderData();
-      // localStorage.removeItem('productId');//remove id
+      this.stateFlag = false;
+      localStorage.removeItem('productId');//remove id
     } else {
       this.router.navigate(['/product'])
     }
@@ -52,18 +58,14 @@ export class OrderConfirmComponent implements OnInit {
     this.hasDefaultAddress = false;
   }
 
-  renderData() {
-    this.stateFlag = false;
-  }
-
   orderTotal(order) {
-    this.order.count = order.count;
-    this.order.price = order.price;
+    this.order.totalCount = order.count;
+    this.order.totalPrice = order.price;
   }
 
   orderConfirm() {
-    console.log(this.orderData);
-    this.orderService.confirm(this.orderData)
+    this.orderService.addOrder(this.order);
+    this.router.navigate(['/order']);
   }
 
 }

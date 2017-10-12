@@ -11,10 +11,10 @@ import {OrderService} from './order.service';
   styleUrls: ['./order-tab.component.scss']
 })
 
-export class OrderTabComponent implements OnInit{
+export class OrderTabComponent implements OnInit {
 
   navs: OrderTab[] = [];
-  state: string;
+  state: any;
   selectedState = localStorage.getItem('orderState');
 
   constructor(private navService: OrderTabService,) {
@@ -28,9 +28,8 @@ export class OrderTabComponent implements OnInit{
     this.state = this.selectedState;
   }
 
-  onSelect(state: string): void {
+  onSelect(state: any): void {
     localStorage.setItem('orderState', state);
-    let activeState = localStorage.getItem('orderState');
-    this.selectedState = activeState;
+    this.selectedState = localStorage.getItem('orderState');
   }
 }

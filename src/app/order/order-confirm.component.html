@@ -8,13 +8,13 @@
     <div class="ui-border-b text-deliver">配送方式 <span>快递<i class="deliver-price">免运费</i></span></div>
     <div class="ui-border-b">卖家留言：<input title="user-message" class="input" placeholder="留言内容" ></div>
     <div class="text-total">
-      <p>共件{{order.count}}商品</p>
-      <p class="price">小计：<span class="text-price">¥<span>{{order.price}}</span></span></p>
+      <!--<p>共件{{order.totalCount}}商品</p>-->
+      <p class="price">小计：<span class="text-price">¥<span>{{order.totalPrice}}</span></span></p>
     </div>
   </div>
 
   <nav class="nav-bar ui-border-t">
-    <p>合计：<span class="text-price">¥<span>{{order.price}}</span></span></p>
+    <p>合计：<span class="text-price">¥<span>{{order.totalPrice}}</span></span></p>
     <button type="button" class="btn btn-default" (click)="orderConfirm()">立即购买</button>
   </nav>
 

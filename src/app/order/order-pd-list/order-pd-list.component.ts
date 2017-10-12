@@ -6,9 +6,9 @@ import {
   OnInit,
 } from '@angular/core';
 
-import{ProductService}from '../product/product.service';
+import{ProductService}from '../../product/product.service';
 
-import {Product} from '../product/product';
+import {Product} from '../../product/product';
 
 @Component({
   selector: 'order-pd',

@@ -3,5 +3,4 @@ export class OrderTab {
   name: string;
   title: string;
   iconUrl:string;
-
 }

@@ -7,7 +7,7 @@ import {OrderConfirmComponent} from './order-confirm.component';
 import {OrderTabComponent} from './order-tab.component';
 import {OrderListComponent} from './order-list.component';
 import {AddressDefaultComponent} from "../user/address/address-default.component";
-import {OrderPdListComponent} from "./order-pd-list.component";
+import {OrderPdListComponent} from "./order-pd-list/order-pd-list.component";
 import {OrderDetailComponent} from './order-detail.component';
 
 import {OrderService} from'./order.service';
@@ -23,12 +23,10 @@ import {OrderRoutingModule} from './order-routing.module';
   ],
   declarations: [
     OrderComponent,
-
     OrderTabComponent,
     OrderListComponent,
     OrderPdListComponent,
     OrderDetailComponent,
-
     AddressDefaultComponent,
     OrderConfirmComponent,
   ],

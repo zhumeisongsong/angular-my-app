@@ -9,7 +9,7 @@
 
   <section class="user-order">
 
-    <div *ngFor="let nav of navs" class="col-xs-4 icon-item" (click)="orderList(nav.name)">
+    <div *ngFor="let nav of navs" class="col-xs-4 icon-item" (click)="orderList(nav.id)">
       <div class="image-con">
         <img src="{{nav.iconUrl}}">
       </div>

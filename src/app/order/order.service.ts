@@ -17,7 +17,8 @@ export class OrderService {
   constructor(private http: Http) {
   }
 
-  confirm(order:object): Promise<Order> {
+  addOrder(order: object): Promise<Order> {
+    console.log(JSON.stringify(order));
     return this.http
       .post(this.orderUrl, JSON.stringify(order), {headers: this.headers})
       .toPromise()
@@ -25,15 +26,16 @@ export class OrderService {
       .catch(this.handleError);
   }
 
-
-  getOrders(state:number):Promise<Order[]>{
-    return this.http.get(this.orderUrl)
+  getOrders(state: number): Promise<Order[]> {
+    const url = `${this.orderUrl}/1`;
+    return this.http.get(url)
+      // .post(this.orderUrl, JSON.stringify(state), {headers: this.headers})
       .toPromise()
-      .then(response=>response.json().data as Order[])
+      .then(response => response.json().data as Order[])
       .catch(this.handleError);
   }
 
-  getOrder(id:number):Promise<Order>{
+  getOrder(id: number): Promise<Order> {
     const url = `${this.orderUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
@@ -41,11 +43,20 @@ export class OrderService {
       .catch(this.handleError);
   }
 
-  delete(id:number): Promise<void> {
+  delete(id: number): Promise<void> {
     const url = `${this.orderUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
+      .catch(this.handleError);
+  }
+
+  changeState(order: Order): Promise<Order[]> {
+    const url = `${this.orderUrl}/${order.orderId}`;
+    return this.http
+      .post(this.orderUrl, JSON.stringify(order), {headers: this.headers})
+      .toPromise()
+      .then(() => order)
       .catch(this.handleError);
   }
 
