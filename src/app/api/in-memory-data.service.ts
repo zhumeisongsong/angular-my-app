@@ -40,9 +40,26 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const orders = [];
 
-    const orderPd = [];
+    const orderPds = [];
 
-    return {products, orders, orderPd};
+
+    const addresses = [
+      {
+        addresssId: 1,
+        userId: 1,
+        consignee: 'Whirlwind',
+        mobile: '18108277715',
+        province: 1,
+        city: 11,
+        district: 22,
+        address: '这是一个美丽的地方',
+        isDefault: 1,
+        isPickup: 1
+      },
+    ];
+
+
+    return {products, orders, orderPds, addresses};
   }
 
 }

@@ -1,11 +1,11 @@
-import 'rxjs/add/operator/switchMap';
-
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 import {ProductService} from './product.service';
 
 import {Product} from './product';
+
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'pd-detail',
@@ -25,7 +25,7 @@ export class ProductDetailComponent implements OnInit {
     this.route.paramMap
       .switchMap((params: ParamMap) => this.productService.getProduct(+params.get('id')))
       .subscribe(product => {
-        this.product = product
+        this.product = product;
       });
   }
 
@@ -40,12 +40,12 @@ export class ProductDetailComponent implements OnInit {
   //   this.isHidden = close;
   // }
 
-  addToCart() {
-    console.log(this.product)
-  }
+  // addToCart() {
+  //   console.log(this.product)
+  // }
 
-  buyNow() {
-    console.log(this.product)
+  buyNow(productId:any) {
+    localStorage.setItem('productId',productId);
     this.router.navigate(['/order', 'confirm'])
   }
 }

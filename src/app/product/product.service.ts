@@ -20,7 +20,7 @@ export class ProductService {
   getProducts(): Promise<Product[]> {
     return this.http.get(this.productUrl)
       .toPromise()//返回的是RxJS的Observable可观察对象
-      .then(response => response.json().data as Product[])
+      .then(response => response. json().data as Product[])
       .catch(this.handleError);
   }//stub
 

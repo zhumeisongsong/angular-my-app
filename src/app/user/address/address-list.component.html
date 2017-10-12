@@ -5,15 +5,14 @@
       <section class="address-con">
         <div class="col-xs-7 user-name">{{address.consignee}}</div>
         <div class="col-xs-5 user-phone">{{address.mobile}}</div>
-        <div class="col-xs-12 user-address">
-          {{address.province}}{{address.city}}{{address.district}}{{address.address}}
+        <div class="col-xs-12 user-address">{{address.province}}{{address.city}}{{address.district}}{{address.address}}
         </div>
       </section>
 
       <section class="control-bar ui-border-t">
-        <div>默认地址</div>
-        <div [routerLink]="[address.id]" class="control-item">编辑</div>
-        <div class="control-item" (click)="deleteAddress(address)">删除</div>
+        <div (click)="default(address.id)">默认地址</div>
+        <div [routerLink]="[address.id]" class="control-item" (click)="update(address.id)">编辑</div>
+        <div class="control-item" (click)="delete(address.id)">删除</div>
       </section>
     </li>
   </ul>

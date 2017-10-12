@@ -1,4 +1,10 @@
 import{Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+
+import{ProductService}from '../product/product.service';
+import {OrderService} from './order.service';
+
+import {Order} from './order';
 
 @Component({
   selector: 'order-confirm',
@@ -8,8 +14,16 @@ import{Component, OnInit} from '@angular/core';
 
 export class OrderConfirmComponent implements OnInit {
   hasDefaultAddress: boolean;
+  stateFlag: boolean;
+  idList: any;
+  orderData:Order;
 
-  getUseId() {
+  constructor(private productService: ProductService,
+              private orderService: OrderService,
+              private router: Router) {
+  }
+
+  getUserId() {
     let user = '1';
     localStorage.set('userId', user);
 
@@ -18,15 +32,29 @@ export class OrderConfirmComponent implements OnInit {
     return userId;
   }
 
+  //取userId 查询有没有default address
   getDefaultAddress() {
     this.hasDefaultAddress = false;
   }
 
+  renderData() {
+    this.stateFlag = false;
+  }
 
-
-  //取userId 查询有没有default address
   ngOnInit() {
+    this.idList = localStorage.getItem('productId');
 
+    if (this.idList) {
+      this.renderData();
+      // localStorage.removeItem('productId');//请id
+    } else {
+      this.router.navigate(['/product'])
+    }
+  }
+
+  orderConfirm(){
+    console.log(this.orderData);
+    this.orderService.confirm(this.orderData)
   }
 
 }
