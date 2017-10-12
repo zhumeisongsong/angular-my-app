@@ -1,20 +1,29 @@
-<!--<section class="order-con" *ngFor="let order of orders">-->
-<!--{{state}}-->
-  <!--&lt;!&ndash;<order-pd [orderId]="order.id"></order-pd>&ndash;&gt;-->
+<ul class="order-con" *ngIf="orders">
+  <li *ngFor="let order of orders">
+    <order-pd [orderId]="order.id"></order-pd>
 
-  <!--<div class="order-info ui-border-b">-->
-    <!--<p>共{{order.totalCount}}件商品</p>-->
-    <!--<p class="price">小计：<span class="text-price">¥<span>{{order.totalPrice}}</span></span>(免运费)</p>-->
-  <!--</div>-->
+    <div class="order-info ui-border-b">
+      <p>共{{order.totalCount}}件商品</p>
+      <p class="price">小计：<span class="text-price">¥<span>{{order.totalPrice}}</span></span>(免运费)</p>
+    </div>
 
-  <!--<footer class="control-btn">-->
+    <section [ngSwitch]="order?.orderState">
+      <div class="control-btn" *ngSwitchCase="1">
+        <button type="button" class="btn btn-empty-default" (click)="changeState(order)">去付款</button>
+        <button type="button" class="btn btn-empty-black" (click)="cancel(order.id)">取消订单</button>
+      </div>
+      <div class="control-btn" *ngSwitchCase="2">
+        <button type="button" class="btn btn-empty-default" (click)="changeState(order)">确认收货</button>
+        <!--已完成 订单详情-->
+      </div>
+    </section>
 
-    <!--<button type="button" class="btn btn-empty-black">取消订单</button>-->
-    <!--<button type="button" class="btn btn-empty-default">去付款</button>-->
-    <!--&lt;!&ndash;待收货 确认收货 &ndash;&gt;-->
-    <!--&lt;!&ndash;已完成 订单详情&ndash;&gt;-->
-  <!--</footer>-->
+  </li>
 
-<!--</section>-->
+</ul>
+
+<section *ngIf="!orders">
+  5555
+</section>
 
 

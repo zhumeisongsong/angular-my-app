@@ -13,20 +13,13 @@ import {Order} from './order';
 export class OrderListComponent implements OnInit {
   @Input() state: any;
   orderId:any;
-  orders: Order[] = [];
+  @Input()orders: Order[] = [];
 
   constructor(private orderService: OrderService,) {
   }
 
   ngOnInit() {
-    this.orderService.getOrders(1)
-      .then(orders => {
-        console.log(orders);
-        this.orderService.getOrder(1)
-          .then(order=>{
-            console.log(order);
-          });
-        // this.orders=orders;
-      });
+
+    console.log(this.orders);
   }
 }

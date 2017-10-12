@@ -14,13 +14,10 @@ export class OrderService {
   });
   private orderUrl = 'api/orders';
 
-  private id;
-
   constructor(private http: Http) {
   }
 
-  addOrder(order: object): Promise<Order> {
-    console.log(JSON.stringify(order));
+  create(order: object): Promise<Order> {
     return this.http
       .post(this.orderUrl, JSON.stringify(order), {headers: this.headers})
       .toPromise()
@@ -28,12 +25,13 @@ export class OrderService {
       .catch(this.handleError);
   }
 
-  getOrders(state: number): Promise<Order[]> {
-    const url = `${this.orderUrl}/state`;
-    return this.http//.get(url)
-      .post(this.orderUrl, {headers: this.headers})
+  getOrders(state?: number): Promise<Order[]> {
+    const url = state?`${this.orderUrl}?orderState=${state}`:this.orderUrl;
+
+    return this.http.get(url)
+    // .post(this.orderUrl, JSON.stringify({'orderState':state}), {headers: this.headers})
       .toPromise()
-      .then(response => response.json().data as Order)
+      .then(response => response.json().data as Order[])
       .catch(this.handleError);
   }
 
@@ -53,10 +51,10 @@ export class OrderService {
       .catch(this.handleError);
   }
 
-  changeState(order: Order): Promise<Order[]> {
+  updateState(order: Order): Promise<Order> {
     const url = `${this.orderUrl}/${order.orderId}`;
     return this.http
-      .post(this.orderUrl, JSON.stringify(order), {headers: this.headers})
+      .put(url, JSON.stringify(order.orderState), {headers: this.headers})
       .toPromise()
       .then(() => order)
       .catch(this.handleError);

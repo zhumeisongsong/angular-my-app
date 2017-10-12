@@ -1,5 +1,11 @@
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
+  // consignee: "smm",
+  // province: 22,
+  // city: 33,
+  // district: 18,
+  // address: "333333",
+  // mobile: "18108272714",
 
   createDb() {
     const products = [
@@ -42,38 +48,51 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id:1,
         userId:1,
-        orderState:0,
-        consignee: "smm",
-        province: 22,
-        city: 33,
-        district: 18,
-        address: "333333",
-        mobile: "18108272714",
+        orderState:2,
         totalCount:2,
-        totalPrice:300,
-    }
-    ];
-
-    const orderPds = [];
-
-
-    const addresses = [
+        totalPrice:200,
+    },
       {
-        addresssId: 1,
-        userId: 1,
-        consignee: 'Whirlwind',
-        mobile: '18108277715',
-        province: 1,
-        city: 11,
-        district: 22,
-        address: '这是一个美丽的地方',
-        isDefault: 1,
-        isPickup: 1
+        id:2,
+        userId:1,
+        orderState:1,
+        totalCount:1,
+        totalPrice:100,
+      },
+      {
+        id:3,
+        userId:1,
+        orderState:3,
+        totalCount:3,
+        totalPrice:300,
       },
     ];
 
+    const orderPds = [
+      {},
+    ];
 
-    return {products, orders, orderPds, addresses};
+    const user=[];
+
+
+
+    // const addresses = [
+    //   {
+    //     addresssId: 1,
+    //     userId: 1,
+    //     consignee: 'Whirlwind',
+    //     mobile: '18108277715',
+    //     province: 1,
+    //     city: 11,
+    //     district: 22,
+    //     address: '这是一个美丽的地方',
+    //     isDefault: 1,
+    //     isPickup: 1
+    //   },
+    // ];
+
+
+    return {products, orders, orderPds,user};//addresses
   }
 
 }

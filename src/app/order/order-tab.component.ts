@@ -5,6 +5,8 @@ import {OrderTab} from './order-tab';
 import {OrderTabService} from './order-tab.service';
 import {OrderService} from './order.service';
 
+import {Order}from'./order';
+
 @Component({
   selector: 'order-tab',
   templateUrl: './order-tab.component.html',
@@ -13,20 +15,36 @@ import {OrderService} from './order.service';
 
 export class OrderTabComponent implements OnInit {
   navs: OrderTab[] = [];
-  selectedState: any = localStorage.getItem('orderState') || 1;
+  orders: Order[] = [];
+  private selectedState: any = localStorage.getItem('orderState') || 1;
 
-  constructor(private navService: OrderTabService,) {
+  constructor(private navService: OrderTabService,
+              private orderService: OrderService) {
   }
 
   ngOnInit() {
     this.navService.getOrderTab()
       .then(navs => {
         this.navs = navs;
-        // this.state = this.selectedState;
+        this.getOrderList(this.selectedState);
       });
   }
 
   onSelect(state: any): void {
     this.selectedState = state;
+    this.getOrderList(state)
+  }
+
+  getOrderList(state: any): void {
+    this.orderService.getOrders(state)
+      .then(orders => {
+        this.orders = orders;
+        console.log(orders);
+        // this.orderService.getOrder(1)
+        //   .then(order=>{
+        //     console.log(order);
+        //   });
+        // this.orders=orders;
+      });
   }
 }

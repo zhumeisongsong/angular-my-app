@@ -1,15 +1,15 @@
 export class Product {
   id: number;
   productName: string;
-  listIntro: string;
-  detailIntro: string;
   price: number;
-  originalPrice: number;
   coverUrl: string;
-  userPurchase: number;
   // storeName: string;
   // storeId: number;
-  richText: any;
+  richText?: any;
+  listIntro?: string;
+  detailIntro?: string;
+  userPurchase?: number;
+  originalPrice?: number;
   count?: number;
   orderIndex?: number;
 }
