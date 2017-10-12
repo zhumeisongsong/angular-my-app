@@ -14,6 +14,8 @@ export class OrderService {
   });
   private orderUrl = 'api/orders';
 
+  private id;
+
   constructor(private http: Http) {
   }
 
@@ -27,11 +29,11 @@ export class OrderService {
   }
 
   getOrders(state: number): Promise<Order[]> {
-    const url = `${this.orderUrl}/1`;
-    return this.http.get(url)
-      // .post(this.orderUrl, JSON.stringify(state), {headers: this.headers})
+    const url = `${this.orderUrl}/state`;
+    return this.http//.get(url)
+      .post(this.orderUrl, {headers: this.headers})
       .toPromise()
-      .then(response => response.json().data as Order[])
+      .then(response => response.json().data as Order)
       .catch(this.handleError);
   }
 

@@ -19,6 +19,7 @@ import {Product} from '../../product/product';
 export class OrderPdListComponent implements OnInit {
   @Input('stateFlag') stateFlag: boolean;
   @Input('idList') idList: any;
+  @Input()orderId:any;
   products: Product[] = [];
 
   totalModel = [];

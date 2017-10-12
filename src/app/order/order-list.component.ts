@@ -11,28 +11,22 @@ import {Order} from './order';
 })
 
 export class OrderListComponent implements OnInit {
-  @Input('state') state: any;
+  @Input() state: any;
+  orderId:any;
   orders: Order[] = [];
 
   constructor(private orderService: OrderService,) {
   }
 
-  // ngOnChanges(state:any) {
-  //   console.log(this.state);
-  //   //string 改id
-  //   this.orderService.getOrders(0)
-  //     .then(orders => {
-  //       console.log(orders);
-  //       this.orders = orders;
-  //     });
-  // }
-
   ngOnInit() {
-    console.log(this.state);
-    this.orderService.getOrders(0)
+    this.orderService.getOrders(1)
       .then(orders => {
         console.log(orders);
-        this.orders = orders;
+        this.orderService.getOrder(1)
+          .then(order=>{
+            console.log(order);
+          });
+        // this.orders=orders;
       });
   }
 }

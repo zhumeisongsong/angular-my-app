@@ -49,7 +49,8 @@ export class InMemoryDataService implements InMemoryDbService {
         district: 18,
         address: "333333",
         mobile: "18108272714",
-
+        totalCount:2,
+        totalPrice:300,
     }
     ];
 

@@ -12,10 +12,8 @@ import {OrderService} from './order.service';
 })
 
 export class OrderTabComponent implements OnInit {
-
   navs: OrderTab[] = [];
-  state: any;
-  selectedState = localStorage.getItem('orderState');
+  selectedState: any = localStorage.getItem('orderState') || 1;
 
   constructor(private navService: OrderTabService,) {
   }
@@ -24,12 +22,11 @@ export class OrderTabComponent implements OnInit {
     this.navService.getOrderTab()
       .then(navs => {
         this.navs = navs;
+        // this.state = this.selectedState;
       });
-    this.state = this.selectedState;
   }
 
   onSelect(state: any): void {
-    localStorage.setItem('orderState', state);
-    this.selectedState = localStorage.getItem('orderState');
+    this.selectedState = state;
   }
 }
