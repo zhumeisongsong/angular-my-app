@@ -18,10 +18,10 @@
 }
 
 .order-info {
-  padding: 0 map-get($global-space, b);
   background-color: #fff;
   div {
     @include flex-box(row, space-between, center);
+    padding: 0 map-get($global-space, b);
     height: 40px;
   }
   .deliver-price {

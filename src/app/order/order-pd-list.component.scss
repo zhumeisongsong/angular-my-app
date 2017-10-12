@@ -37,34 +37,61 @@ header {
       margin-bottom: 0 !important;
     }
   }
-  .image-con {
-    position: relative;
-    padding-top: 22%;
-    overflow: hidden;
-    img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-    }
+}
+
+.image-con {
+  position: relative;
+  padding-top: 22%;
+  overflow: hidden;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
   }
-  .text-con {
-    @include flex-box(row, center, space-between);
-    padding-left: map-get($global-space, b);
-    .text-sub {
-      margin-bottom: 10px;
+}
+
+.text-con {
+  @include flex-box(row, center, space-between);
+  padding-left: map-get($global-space, b);
+  .text-sub {
+    margin-bottom: 10px;
+  }
+  .text-number {
+    width: 50%;
+    padding-top: 7px;
+    text-align: right;
+    span {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background-color: #fff;
+      border: 1px solid map-get($global-color, i);
+      text-align: center;
+      line-height: 20px;
     }
-    .text-number {
-      width: 50%;
-      text-align: right;
+    .static-state{
+      border: none;
+      background:none;
     }
-    .text-price {
-      width: 50%;
-      color: map-get($global-color, a);
-      font-weight: 400;
-      span {
-        font-size: map-get($global-font-size, h2);
-      }
+    input{
+      display: inline-block;
+      width: 30px;
+      height: 25px;
+      border-top: 1px solid map-get($global-color,i);
+      border-bottom: 1px solid map-get($global-color,i);
+      text-align: center;
+      vertical-align: top;
+    }
+
+  }
+  .text-price {
+    width: 50%;
+    padding-top: 10px;
+    color: map-get($global-color, a);
+    font-weight: 400;
+    span {
+      font-size: map-get($global-font-size, h2);
     }
   }
 }

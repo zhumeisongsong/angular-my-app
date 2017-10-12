@@ -1,5 +1,5 @@
 export class Product {
-  id:number;
+  id: number;
   productName: string;
   listIntro: string;
   detailIntro: string;
@@ -10,4 +10,6 @@ export class Product {
   // storeName: string;
   // storeId: number;
   richText: any;
+  count?: number;
+  orderIndex?: number;
 }
