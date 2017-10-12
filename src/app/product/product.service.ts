@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import{HttpClient} from '@angular/common/http';
+import {Headers, Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';//Angular Observable object has no toPromise operator
 
@@ -9,18 +9,18 @@ import {Product} from './product';
 
 export class ProductService {
 
-  private header = new Headers({
+  private headers = new Headers({
     'Content-Type': 'application/json'
   });
-  private productUrl = '/index.php/products';
+  private productUrl = 'api/products';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: Http) {
   }
 
   getProducts(): Promise<Product[]> {
     return this.http.get(this.productUrl)
       .toPromise()//返回的是RxJS的Observable可观察对象
-      .then(response => response as Product[])
+      .then(response => response. json().data as Product[])
       .catch(this.handleError);
   }//stub
 
@@ -28,7 +28,7 @@ export class ProductService {
     const url = `${this.productUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response as Product)
+      .then(response => response.json().data as Product)
       .catch(this.handleError);
   }
 

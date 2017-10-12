@@ -1,8 +1,16 @@
 export class Order {
-  id: number;
-  uId:number;
-  status:string;
-  creatDate:string;
-  totalPrice:number;
-  pdList:string;
+  userId: number;
+
+  orderState: number;
+  totalPrice: number;
+  userNote: string;
+
+  consignee: string;
+  province: number;
+  city: number;
+  district: number;
+  address: string;
+  mobile: string;
+
+  orderId?: number;
 }

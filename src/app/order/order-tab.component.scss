@@ -28,7 +28,7 @@
   }
 }
 
-.active {
+.selected {
   color: map-get($global-color, a);
   border-bottom: 1px solid map-get($global-color, a);
 }

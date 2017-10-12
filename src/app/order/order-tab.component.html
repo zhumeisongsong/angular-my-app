@@ -1,11 +1,14 @@
 <div class="container">
+
   <nav class="tab-nav">
-    <a *ngFor="let nav of navs" (click)="onSelect(state)" [class.selected]="state===selectedState">{{nav.title}}</a>
+    <a *ngFor="let nav of navs" (click)="onSelect(nav.name)" [class.selected]="nav.name===selectedState">{{nav.title}}</a>
   </nav>
 
   <section class="tab-con">
-    <order-list *ngIf="selectedState"></order-list>
+    <order-list *ngIf="selectedState" [state]="state">
+    </order-list>
   </section>
+
 </div>
 
 

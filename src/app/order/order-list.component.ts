@@ -1,4 +1,6 @@
-import{Component} from '@angular/core';
+import{Component, Input, OnInit} from '@angular/core';
+
+import {Order} from './order';
 
 @Component({
   selector: 'order-list',
@@ -6,6 +8,10 @@ import{Component} from '@angular/core';
   styleUrls: ['./order-list.component.scss']
 })
 
-export class OrderListComponent {
+export class OrderListComponent implements OnInit {
+  @Input('state') state: string;
 
+  ngOnInit() {
+    console.log(this.state)
+  }
 }

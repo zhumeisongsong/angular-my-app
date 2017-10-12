@@ -1,0 +1,29 @@
+<div class="container">
+  <img src="./assets/image/user-login.jpg" alt="user-login">
+
+  {{diagnostic}}
+  <form #mobileForm="ngForm" (ngSubmit)="mobileSubmit(mobile.model)" class="form">
+    <div class="input-group input-phone">
+      <input type="number" class="input" id="mobile" name="mobile" placeholder="请输入您的手机号码" required
+             [(ngModel)]="model.mobile" #mobile="ngModel"
+
+             oninput="if(value.length>11)value=value.slice(0,11)">
+
+      <button type="submit" [disabled]="!mobileForm.form.valid" class="btn btn-code">
+        {{sendBtn}}
+      </button>
+    </div>
+  </form>
+
+  <form #loginForm="ngForm" (ngSubmit)="loginSubmit(mobile.model,code.model)" class="form">
+    <div class="input-group input-code">
+      <input type="number" class="input" id="code" name="code" placeholder="请输入短信验证码" required
+             [(ngModel)]="model.code" #code="ngModel"
+             oninput="if(value.length>4)value=value.slice(0,4)">
+    </div>
+
+    <button type="submit" [disabled]="!loginForm.form.valid" class="btn btn-gray">登录
+    </button>
+  </form>
+
+</div>

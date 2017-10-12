@@ -9,7 +9,7 @@ import {SetParameterComponent} from "./set-parameter.component";
 
 const productRoutes: Routes = [
   {
-    path: 'product',
+    path: '',
     component: ProductComponent,
     children: [
       {

@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/switchMap';
-import{Component, OnInit, AfterContentInit, ContentChildren, QueryList} from '@angular/core';
+import{Component, OnInit} from '@angular/core';
 
 import {OrderTab} from './order-tab';
 import {OrderTabService} from './order-tab.service';
@@ -11,35 +11,26 @@ import {OrderService} from './order.service';
   styleUrls: ['./order-tab.component.scss']
 })
 
-export class OrderTabComponent implements AfterContentInit {
+export class OrderTabComponent implements OnInit{
+
   navs: OrderTab[] = [];
+  state: string;
+  selectedState = localStorage.getItem('orderState');
 
   constructor(private navService: OrderTabService,) {
   }
 
-  // isSelected(orderNav: OrderNav) {
-  //   return orderNav.text === this.selectedStatus;
-  // }
-
-  ngAfterContentInit() {
+  ngOnInit() {
     this.navService.getOrderTab()
       .then(navs => {
         this.navs = navs;
-        console.log(navs)
       });
+    this.state = this.selectedState;
   }
 
-
-  // @ContentChildren(OrderListComponent) tabs: QueryList<OrderListComponent>;
-  //
-  // tabClicked(activeTab){
-  //   const tabs = this.tabs.toArray();
-  //   tabs.forEach(tab=>tab.active=false);
-  //   activeTab.active=true;
-  // }
-
-  // onSelect(status:text){
-  //   this.selectedStatus =
-  //
-  // }
+  onSelect(state: string): void {
+    localStorage.setItem('orderState', state);
+    let activeState = localStorage.getItem('orderState');
+    this.selectedState = activeState;
+  }
 }

@@ -7,7 +7,7 @@ import {
 } from '@angular/forms'
 
 import {Address} from './address';
-import {District, provinces, cities, districts} from './chinese-districts';
+import {provinces, cities, districts} from './chinese-districts';
 
 import {AddressService} from './address.service';
 
@@ -38,11 +38,10 @@ export class AddressDetailComponent implements OnChanges {
     this.addressForm = this.fb.group({
       consignee: ['', Validators.required],
       mobile: ['', Validators.required],
-      province: ['', Validators.required],
-      city: ['', Validators.required],
-      district: ['', Validators.required],
+      province: [, Validators.required],
+      city: [, Validators.required],
+      district: [, Validators.required],
       address: ['', Validators.required],
-      isDefault: ''
     })
   }
 
@@ -54,21 +53,22 @@ export class AddressDetailComponent implements OnChanges {
 
   ngSubmit() {
     alert('in');
-    this.address = this.prepareSaveAddress();
-    this.addressService.updateAddress(this.address).subscribe();
-    this.ngOnChanges();
+    // this.address = this.prepareSaveAddress();
+    // this.addressService.updateAddress(this.address).subscribe();
+    // this.ngOnChanges();
   }
 
   prepareSaveAddress(): Address {
     const formModel = this.addressForm.value;
 
     const saveAddress: Address = {
-      id: this.address.id,
+      addressId: this.address.addressId,
+      userId:localStorage.getItem('UserId'),
       consignee: formModel.consignee as string,
       mobile: formModel.mobile as string,
-      province: formModel.province as string,
-      city: formModel.city as string,
-      district: formModel.district as string,
+      province: formModel.province as number,
+      city: formModel.city as number,
+      district: formModel.district as number,
       address: formModel.address as string,
     };
 

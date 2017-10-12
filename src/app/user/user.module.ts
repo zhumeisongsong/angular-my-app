@@ -5,11 +5,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserComponent} from './user.component';
 import {UserCenterComponent} from './user-center.component';
 
-import {AddressListComponent} from './address-list.component';
-import {AddressDetailComponent} from './address-detail.component';
+import {AddressListComponent} from './address/address-list.component';
+import {AddressDetailComponent} from './address/address-detail.component';
 
 import {UserService} from './user.service';
-import {AddressService} from './address.service';
+import {AddressService} from './address/address.service';
 
 import {UserRoutingModule} from "./user-routing.module";
 
@@ -26,7 +26,9 @@ import {UserRoutingModule} from "./user-routing.module";
     AddressListComponent,
     AddressDetailComponent
   ],
-  exports: [],
+  exports: [
+    UserCenterComponent,
+  ],
   providers: [
     UserService,
     AddressService

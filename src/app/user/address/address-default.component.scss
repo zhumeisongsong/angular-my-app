@@ -1,6 +1,6 @@
-@import "../../assets/stylesheet/variable";
-@import "../../assets/stylesheet/mixin";
-@import "../../assets/stylesheet/extend";
+@import "../../../assets/stylesheet/variable";
+@import "../../../assets/stylesheet/mixin";
+@import "../../../assets/stylesheet/extend";
 
 .address-con {
   @include flex-box(row, space-between, center);
@@ -25,7 +25,7 @@
     width: 20px;
     height: 20px;
     margin-top: -10px;
-    background: url("../../assets/image/icon/address-dark.svg") center no-repeat;
+    background: url("../../../assets/image/icon/address-dark.svg") center no-repeat;
     background-size: 100%;
     z-index: map-get($global-z-index,b)+10;
   }

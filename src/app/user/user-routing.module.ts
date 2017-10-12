@@ -5,8 +5,8 @@ import {UserComponent} from "./user.component";
 import {UserCenterComponent} from "./user-center.component";
 
 
-import {AddressListComponent} from "./address-list.component";
-import {AddressDetailComponent} from "./address-detail.component";
+import {AddressListComponent} from "./address/address-list.component";
+import {AddressDetailComponent} from "./address/address-detail.component";
 
 @NgModule({
   imports: [

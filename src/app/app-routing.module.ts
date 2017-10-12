@@ -1,15 +1,18 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-// import {PageNotFoundComponent} from "./page-not-found.component";
-
-// import { AuthGuard }                from './auth-guard.service';
+import {PageNotFoundComponent} from './page-not-found.component';
+import {AuthGuard} from './login/auth-guard.service';
 
 export const routes: Routes = [
   {
-    path: 'cart',
-    loadChildren: 'app/cart/cart.module#CartModule',
+    path: 'product',
+    loadChildren: 'app/product/product.module#ProductModule',
   },
+  // {
+  //   path: 'cart',
+  //   loadChildren: 'app/cart/cart.module#CartModule',
+  // },
   {
     path: 'user',
     loadChildren: 'app/user/user.module#UserModule',
@@ -25,6 +28,10 @@ export const routes: Routes = [
     redirectTo: '/product',
     pathMatch: 'full'
   },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({
@@ -32,7 +39,7 @@ export const routes: Routes = [
     RouterModule.forRoot(
       routes,
       // {enableTracing: true}
-    )//only used in root routing
+    ),
   ],
   exports: [RouterModule]
 })

@@ -18,7 +18,6 @@ export class ProductListComponent implements OnInit{
     this.service.getProducts()
       .then(products=>{
         this.products=products
-        console.log(products)
       });
   }
 }

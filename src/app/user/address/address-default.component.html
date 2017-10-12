@@ -1,5 +1,5 @@
-<section class="address-con arrow-right">
-  <p class="user-name col-xs-7">收货人：dfdsf{{user}}</p>
+<section class="address-con arrow-right" [routerLink]="['/user/', 'address']">
+  <p class="user-name col-xs-7">收货人:{{user}}</p>
   <p class="user-phone col-xs-5">18108272714{{phone}}</p>
   <p class="user-address icon-address">收货地址：dfdfd{{default_address}}</p>
 </section>

@@ -1,11 +1,11 @@
-import 'rxjs/add/operator/switchMap';
-
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 import {ProductService} from './product.service';
 
 import {Product} from './product';
+
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'pd-detail',
@@ -17,32 +17,35 @@ export class ProductDetailComponent implements OnInit {
   @Input() product: Product;
 
   constructor(private productService: ProductService,
-              private route: ActivatedRoute,) {
+              private route: ActivatedRoute,
+              private router: Router) {
   };
 
   ngOnInit() {
     this.route.paramMap
       .switchMap((params: ParamMap) => this.productService.getProduct(+params.get('id')))
       .subscribe(product => {
-        this.product = product
+        this.product = product;
       });
   }
 
-  //TODO:popup ngclass
-  isHidden: boolean = true;
+  //TODO:remove this popup ngclass
+  // isHidden: boolean = true;
+  //
+  // Popup(isHidden: boolean) {
+  //   this.isHidden = isHidden;
+  // }
+  //
+  // onHidden(close: boolean) {
+  //   this.isHidden = close;
+  // }
 
-  Popup(isHidden: boolean) {
-    this.isHidden = isHidden;
-  }
+  // addToCart() {
+  //   console.log(this.product)
+  // }
 
-  onHidden(close: boolean) {
-    this.isHidden = close;
-  }
-
-  addToCart(){
-    console.log('should login in')
-
-
-
+  buyNow(productId:any) {
+    localStorage.setItem('productId',productId);
+    this.router.navigate(['/order', 'confirm'])
   }
 }
