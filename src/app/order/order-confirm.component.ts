@@ -17,7 +17,7 @@ export class OrderConfirmComponent implements OnInit {
   idList: any;
 
   order: Order = {
-    orderId: 1,
+    id: 1,
     userId: 0,
     orderState: 1,
     totalPrice: 0,

@@ -14,6 +14,7 @@ import {Order}from'./order';
 })
 
 export class OrderTabComponent implements OnInit {
+  state: any;
   navs: OrderTab[] = [];
   orders: Order[] = [];
   private selectedState: any = localStorage.getItem('orderState') || 1;
@@ -39,6 +40,7 @@ export class OrderTabComponent implements OnInit {
     this.orderService.getOrders(state)
       .then(orders => {
         this.orders = orders;
+        this.state = this.selectedState;
         console.log(orders);
         // this.orderService.getOrder(1)
         //   .then(order=>{

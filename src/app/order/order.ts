@@ -10,5 +10,5 @@ export class Order {
   totalPrice: number;
   totalCount:number;
   userNote?: string;
-  orderId?: number;
+  id?: number;
 }

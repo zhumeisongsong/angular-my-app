@@ -1,6 +1,6 @@
 <ul class="order-con" *ngIf="orders">
   <li *ngFor="let order of orders">
-    <order-pd [orderId]="order.id"></order-pd>
+    <!--<order-pd [orderId]="order.id"></order-pd>-->
 
     <div class="order-info ui-border-b">
       <p>共{{order.totalCount}}件商品</p>
@@ -9,11 +9,11 @@
 
     <section [ngSwitch]="order?.orderState">
       <div class="control-btn" *ngSwitchCase="1">
-        <button type="button" class="btn btn-empty-default" (click)="changeState(order)">去付款</button>
+        <button type="button" class="btn btn-empty-default" (click)="changeState(order,2)">去付款</button>
         <button type="button" class="btn btn-empty-black" (click)="cancel(order.id)">取消订单</button>
       </div>
       <div class="control-btn" *ngSwitchCase="2">
-        <button type="button" class="btn btn-empty-default" (click)="changeState(order)">确认收货</button>
+        <button type="button" class="btn btn-empty-default" (click)="changeState(order,3)">确认收货</button>
         <!--已完成 订单详情-->
       </div>
     </section>

@@ -26,7 +26,7 @@ export class OrderService {
   }
 
   getOrders(state?: number): Promise<Order[]> {
-    const url = state?`${this.orderUrl}?orderState=${state}`:this.orderUrl;
+    const url = state ? `${this.orderUrl}?orderState=${state}` : this.orderUrl;
 
     return this.http.get(url)
     // .post(this.orderUrl, JSON.stringify({'orderState':state}), {headers: this.headers})
@@ -51,12 +51,13 @@ export class OrderService {
       .catch(this.handleError);
   }
 
-  updateState(order: Order): Promise<Order> {
-    const url = `${this.orderUrl}/${order.orderId}`;
+  updateState(order: object, id: number): Promise<Order> {
+    console.log(order);
+    const url = `${this.orderUrl}/${id}`;
     return this.http
-      .put(url, JSON.stringify(order.orderState), {headers: this.headers})
+      .put(url, JSON.stringify(order), {headers: this.headers})
       .toPromise()
-      .then(() => order)
+      .then(() => null)
       .catch(this.handleError);
   }
 
