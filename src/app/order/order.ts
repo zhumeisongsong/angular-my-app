@@ -1,5 +1,5 @@
 export class Order {
-  userId: number;
+  userId: number=0;
   orderState: number=0;
   // consignee: string;
   // province: number;
@@ -7,8 +7,8 @@ export class Order {
   // district: number;
   // address: string;
   // mobile: string;
-  totalPrice: number;
-  totalCount:number;
+  totalPrice: number=0;
+  totalCount:number=0;
   userNote?: string;
   id?: number;
 }

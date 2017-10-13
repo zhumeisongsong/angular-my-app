@@ -46,34 +46,59 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const orders = [
       {
-        id:1,
+        id: 1,
         // userId:1,
-        orderState:1,
-        totalCount:1,
-        totalPrice:100,
+        orderState: 1,
+        totalCount: 1,
+        totalPrice: 260,
       },
       {
-        id:2,
+        id: 2,
         // userId:1,
-        orderState:2,
-        totalCount:2,
-        totalPrice:200,
+        orderState: 2,
+        totalCount: 1,
+        totalPrice: 260,
       },
       {
-        id:3,
+        id: 3,
         // userId:1,
-        orderState:3,
-        totalCount:3,
-        totalPrice:300,
+        orderState: 3,
+        totalCount: 1,
+        totalPrice: 260,
       },
     ];
 
     const orderPds = [
-      {},
+      {
+        id: 1,
+        userId:1,
+        productName: "这是一首简单的小情歌11111",
+        price: 260,
+        coverUrl: "/assets/image/list-cover.jpg",
+        count: 1,
+        orderId: 1
+      },
+      {
+        id: 2,
+        userId:1,
+        productName: "这是一首简单的小情歌2222",
+        price: 260,
+        coverUrl: "/assets/image/list-cover.jpg",
+        count: 1,
+        orderId: 2
+      },
+      {
+        id: 3,
+        userId:1,
+        productName: "这是一首简单的小情歌33333",
+        price: 260,
+        coverUrl: "/assets/image/list-cover.jpg",
+        count: 1,
+        orderId: 3
+      },
     ];
 
-    const user=[];
-
+    const user = [];
 
 
     // const addresses = [
@@ -92,7 +117,7 @@ export class InMemoryDataService implements InMemoryDbService {
     // ];
 
 
-    return {products, orders, orderPds,user};//addresses
+    return {products, orders, orderPds, user};//addresses
   }
 
 }

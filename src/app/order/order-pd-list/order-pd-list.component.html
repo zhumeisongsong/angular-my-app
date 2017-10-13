@@ -18,10 +18,12 @@
         <p class="text-title line-ellipsis">{{product.productName}}</p>
         <!--<p class="text-sub">参数等：</p>-->
         <p class="text-price">¥<span>{{product.price}}</span></p>
-        <p class="text-number" *ngIf="stateFlag">
+
+        <p class="text-number" *ngIf="this.orderId">
           <span class="static-state">x{{product.count}}</span>
         </p>
-        <p class="text-number" *ngIf="!stateFlag">
+
+        <p class="text-number" *ngIf="!this.orderId">
           <span (click)="minusCount(product.orderIndex)">-</span><input
           title="count" class="input" type="number" oninput="if(value.length>2)value=value.slice(0,2)"
           value="{{product.count}}"

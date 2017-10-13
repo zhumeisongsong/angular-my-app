@@ -41,12 +41,16 @@ export class OrderTabComponent implements OnInit {
       .then(orders => {
         this.orders = orders;
         this.state = this.selectedState;
-        console.log(orders);
         // this.orderService.getOrder(1)
         //   .then(order=>{
         //     console.log(order);
         //   });
         // this.orders=orders;
       });
+  }
+
+  orderStateChange(state:any) {
+    console.log(state)
+    this.selectedState = state;
   }
 }

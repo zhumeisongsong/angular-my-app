@@ -9,6 +9,7 @@ import {
 import{ProductService}from '../../product/product.service';
 
 import {Product} from '../../product/product';
+import {OrderPdListService} from './order-pd-list.service';
 
 @Component({
   selector: 'order-pd',
@@ -19,7 +20,7 @@ import {Product} from '../../product/product';
 export class OrderPdListComponent implements OnInit {
   @Input('stateFlag') stateFlag: boolean;
   @Input('idList') idList: any;
-  @Input()orderId:any;
+  @Input() orderId: any;
   products: Product[] = [];
 
   totalModel = [];
@@ -27,24 +28,37 @@ export class OrderPdListComponent implements OnInit {
 
   @Output() orderTotal = new EventEmitter<any>();
 
-  constructor(private productService: ProductService,) {
+  constructor(private productService: ProductService,
+              private orderPdListService: OrderPdListService) {
   }
 
   ngOnInit() {
-    //products cyclic fetch
-    this.productService.getProduct(this.idList)
-      .then(product => {
-        product.count = 1;
-        product.orderIndex = 1;
+    if (this.orderId) {
+      this.orderPdListService.getOrderPds(this.orderId)
+        .then(products => {
+          this.products = products;
+        })
 
-        this.products.push(product);
+    } else {
+      //products cyclic fetch
+      this.productService.getProduct(this.idList)
+        .then(product => {
+          product.count = 1;
+          product.orderIndex = 1;
 
-        this.totalModel.push(
-          {"price": product.price, "count": 1}
-        );
+          this.products.push(product);
 
-        this.emitTotalInfo(this.totalModel);
-      });
+          this.totalModel.push(
+            {
+              "price": product.price,
+              "count": 1,
+            }
+          );
+
+          this.emitTotalInfo(this.totalModel);
+        });
+    }
+
   }
 
   emitTotalInfo(totalModel) {
@@ -53,6 +67,7 @@ export class OrderPdListComponent implements OnInit {
     this.order = {
       "price": countTotal.price,
       "count": countTotal.count,
+      "products": this.products
     };
 
     this.orderTotal.emit(this.order);
@@ -77,9 +92,9 @@ export class OrderPdListComponent implements OnInit {
       alert('输入超出范围');
       this.totalModel[index - 1].count = 1;
       this.products[index - 1].count = 1;
-    }else{
+    } else {
       this.totalModel[index - 1].count = count;
-        this.emitTotalInfo(this.totalModel);
+      this.emitTotalInfo(this.totalModel);
     }
   }
 

@@ -12,4 +12,7 @@ export class Product {
   originalPrice?: number;
   count?: number;
   orderIndex?: number;
+  orderId?: number;
+  userId?:number;
+
 }

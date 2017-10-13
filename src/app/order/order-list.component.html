@@ -1,6 +1,6 @@
 <ul class="order-con" *ngIf="orders">
   <li *ngFor="let order of orders">
-    <!--<order-pd [orderId]="order.id"></order-pd>-->
+    <order-pd [orderId]="order.id"></order-pd>
 
     <div class="order-info ui-border-b">
       <p>共{{order.totalCount}}件商品</p>
