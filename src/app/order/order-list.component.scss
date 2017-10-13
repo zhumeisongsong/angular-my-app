@@ -12,12 +12,15 @@
 }
 
 .order-con{
-  background-color: #fff;
+  li{
+    margin-bottom: 10px;
+  }
 }
 
 .order-info {
   @include flex-box(row, flex-end, baseline);
   padding: 10px  map-get($global-space, b);
+  background-color: #fff;
   .price {
     padding-left: map-get($global-space, b);
     span {

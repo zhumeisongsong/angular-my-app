@@ -23,7 +23,6 @@ export class UserCenterComponent implements OnInit {
     this.navService.getOrderTab()
       .then(navs => {
         this.navs = navs;
-        console.log(navs)
       });
   }
 

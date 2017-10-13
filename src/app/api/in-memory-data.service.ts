@@ -1,5 +1,11 @@
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
+  // consignee: "smm",
+  // province: 22,
+  // city: 33,
+  // district: 18,
+  // address: "333333",
+  // mobile: "18108272714",
 
   createDb() {
     const products = [
@@ -38,28 +44,80 @@ export class InMemoryDataService implements InMemoryDbService {
       }
     ];
 
-    const orders = [];
-
-    const orderPds = [];
-
-
-    const addresses = [
+    const orders = [
       {
-        addresssId: 1,
-        userId: 1,
-        consignee: 'Whirlwind',
-        mobile: '18108277715',
-        province: 1,
-        city: 11,
-        district: 22,
-        address: '这是一个美丽的地方',
-        isDefault: 1,
-        isPickup: 1
+        id: 1,
+        // userId:1,
+        orderState: 1,
+        totalCount: 1,
+        totalPrice: 260,
+      },
+      {
+        id: 2,
+        // userId:1,
+        orderState: 2,
+        totalCount: 1,
+        totalPrice: 260,
+      },
+      {
+        id: 3,
+        // userId:1,
+        orderState: 3,
+        totalCount: 1,
+        totalPrice: 260,
       },
     ];
 
+    const orderPds = [
+      {
+        id: 1,
+        userId:1,
+        productName: "这是一首简单的小情歌11111",
+        price: 260,
+        coverUrl: "/assets/image/list-cover.jpg",
+        count: 1,
+        orderId: 1
+      },
+      {
+        id: 2,
+        userId:1,
+        productName: "这是一首简单的小情歌2222",
+        price: 260,
+        coverUrl: "/assets/image/list-cover.jpg",
+        count: 1,
+        orderId: 2
+      },
+      {
+        id: 3,
+        userId:1,
+        productName: "这是一首简单的小情歌33333",
+        price: 260,
+        coverUrl: "/assets/image/list-cover.jpg",
+        count: 1,
+        orderId: 3
+      },
+    ];
 
-    return {products, orders, orderPds, addresses};
+    const user = [];
+
+
+    // const addresses = [
+    //   {
+    //     addresssId: 1,
+    //     userId: 1,
+    //     consignee: 'Whirlwind',
+    //     mobile: '18108277715',
+    //     province: 1,
+    //     city: 11,
+    //     district: 22,
+    //     address: '这是一个美丽的地方',
+    //     isDefault: 1,
+    //     isPickup: 1
+    //   },
+    // ];
+
+
+    return {products, orders, orderPds, user};//addresses
   }
 
 }

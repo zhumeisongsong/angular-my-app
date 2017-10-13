@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     this.authService.isLoggedIn = true;
     if (this.authService.isLoggedIn) {
       console.log(this.authService)
-      let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/user';
+      let redirect = '/user'; //this.authService.redirectUrl ?this.authService.redirectUrl :
 
       let navigationExtras: NavigationExtras = {
         queryParamsHandling: 'preserve',

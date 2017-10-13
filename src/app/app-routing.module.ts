@@ -16,12 +16,12 @@ export const routes: Routes = [
   {
     path: 'user',
     loadChildren: 'app/user/user.module#UserModule',
-    // canLoad: [AuthGuard]
+    canLoad: [AuthGuard]
   },
   {
     path: 'order',
     loadChildren: 'app/order/order.module#OrderModule',
-    // canLoad: [AuthGuard]
+    canLoad: [AuthGuard]
   },
   {
     path: '',

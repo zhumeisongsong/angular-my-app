@@ -1,4 +1,6 @@
-import{Component, Input, OnInit} from '@angular/core';
+import{Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
+
+import {OrderService} from './order.service';
 
 import {Order} from './order';
 
@@ -9,9 +11,42 @@ import {Order} from './order';
 })
 
 export class OrderListComponent implements OnInit {
-  @Input('state') state: string;
+  @Input() state: any;
+  @Input() orders: Order[] = [];
+
+  @Output() orderStateChange = new EventEmitter<any>();
+
+  constructor(private orderService: OrderService,) {
+  }
 
   ngOnInit() {
-    console.log(this.state)
   }
+
+  changeState(order: Order, state: number) {
+    this.orderStateChange.emit(state);
+
+    let id = order.id;
+    order.orderState = state;
+
+    this.orderService.updateState(order, id)
+      .then(() => {
+        this.refreshOrderList(state);
+      })
+  }
+
+  cancel(id: number) {
+    this.orderService.delete(id)
+      .then(() => {
+          this.refreshOrderList(this.state);
+        }
+      )
+  }
+
+  refreshOrderList(state: any): void {
+    this.orderService.getOrders(state)
+      .then(orders => {
+        this.orders = orders
+      })
+  }
+
 }

@@ -5,32 +5,52 @@ import {OrderTab} from './order-tab';
 import {OrderTabService} from './order-tab.service';
 import {OrderService} from './order.service';
 
+import {Order}from'./order';
+
 @Component({
   selector: 'order-tab',
   templateUrl: './order-tab.component.html',
   styleUrls: ['./order-tab.component.scss']
 })
 
-export class OrderTabComponent implements OnInit{
-
+export class OrderTabComponent implements OnInit {
+  state: any;
   navs: OrderTab[] = [];
-  state: string;
-  selectedState = localStorage.getItem('orderState');
+  orders: Order[] = [];
+  private selectedState: any = localStorage.getItem('orderState') || 1;
 
-  constructor(private navService: OrderTabService,) {
+  constructor(private navService: OrderTabService,
+              private orderService: OrderService) {
   }
 
   ngOnInit() {
     this.navService.getOrderTab()
       .then(navs => {
         this.navs = navs;
+        this.getOrderList(this.selectedState);
       });
-    this.state = this.selectedState;
   }
 
-  onSelect(state: string): void {
-    localStorage.setItem('orderState', state);
-    let activeState = localStorage.getItem('orderState');
-    this.selectedState = activeState;
+  onSelect(state: any): void {
+    this.selectedState = state;
+    this.getOrderList(state)
+  }
+
+  getOrderList(state: any): void {
+    this.orderService.getOrders(state)
+      .then(orders => {
+        this.orders = orders;
+        this.state = this.selectedState;
+        // this.orderService.getOrder(1)
+        //   .then(order=>{
+        //     console.log(order);
+        //   });
+        // this.orders=orders;
+      });
+  }
+
+  orderStateChange(state:any) {
+    console.log(state)
+    this.selectedState = state;
   }
 }
