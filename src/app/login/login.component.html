@@ -4,6 +4,7 @@
   {{diagnostic}}
   <form #mobileForm="ngForm" (ngSubmit)="mobileSubmit(mobile.model)" class="form">
     <div class="input-group input-phone">
+
       <input type="number" class="input" id="mobile" name="mobile" placeholder="请输入您的手机号码" required
              [(ngModel)]="model.mobile" #mobile="ngModel"
 
