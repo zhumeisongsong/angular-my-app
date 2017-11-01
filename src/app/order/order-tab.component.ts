@@ -50,7 +50,6 @@ export class OrderTabComponent implements OnInit {
   }
 
   orderStateChange(state:any) {
-    console.log(state)
     this.selectedState = state;
   }
 }
